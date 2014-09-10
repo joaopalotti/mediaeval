@@ -1,0 +1,71 @@
+%Reference: http://multimediaeval.pbworks.com/w/page/79427054/WorkingNotesPaper2014
+\documentclass{acm_proc_article-me}  
+
+\usepackage{color}
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{url}
+\usepackage{verbatim} % to use \comment command to comment the undesirable tables
+\usepackage{caption}
+\usepackage{subcaption}
+\usepackage{textcomp}
+
+\begin{document}
+
+\title{Working Notes: TUW - See last year titles to figure out one}
+%\subtitle{[Extended Abstract]
+%\titlenote{A full version of this paper is available as
+
+\conferenceinfo{\textit{MediaEval 2014 Workshop,}}{October 16-17, 2014, Barcelona, Spain} 
+
+\numberofauthors{4}
+\author{
+\alignauthor
+Jo\~ao R. M. Palotti\\
+\affaddr{Vienna University of Technology}\\
+%       \affaddr{Favoritenstrasse 9-11/188, 1040 Vienna, Austria}\\
+%       \affaddr{Austria}\\
+       \email{palotti@ifs.tuwien.ac.at}
+%
+\alignauthor
+Navid Rekabsaz\\ %\titlenote{The secretary disavows any knowledge of this author's actions.}\\
+       \affaddr{Vienna University of Technology}\\
+%       \affaddr{Favoritenstrasse 9-11/188, 1040 Vienna, Austria}\\
+%       \affaddr{Austria}\\
+       \email{rekabsaz@ifs.tuwien.ac.at}
+%
+\and
+\alignauthor
+Mihai Lupu\\ %\titlenote{The secretary disavows any knowledge of this author's actions.}\\
+       \affaddr{Vienna University of Technology}\\
+%       \affaddr{Favoritenstrasse 9-11/188, 1040 Vienna, Austria}\\
+%       \affaddr{Austria}\\
+       \email{lupu@ifs.tuwien.ac.at}
+\alignauthor
+Allan Hanbury\\ %\titlenote{The secretary disavows any knowledge of this author's actions.}\\
+       \affaddr{Vienna University of Technology}\\
+%       \affaddr{Favoritenstrasse 9-11/188, 1040 Vienna, Austria}\\
+%       \affaddr{Austria}\\
+       \email{hanbury@ifs.tuwien.ac.at}
+}
+\newcommand\todo[1]{\textcolor{red}{[#1]}}
+%uncomment to remove all todos:
+%\newcommand\todo[1]{}
+
+\maketitle
+
+\input{texs/00-abstract}
+\input{texs/01-intro}
+\input{texs/02-related}
+\input{texs/03-text}
+\input{texs/04-cluster}
+\input{texs/05-experiments}
+\input{texs/06-conclusion}
+
+\paragraph{\textbf{ACKNOWLEDGMENTS}}
+This research was funded by the Austrian Science Fund (FWF) project number I1094-N23 (MUCKE) \todo{What else?}.
+
+\bibliographystyle{abbrv}
+\bibliography{workingNotes}  
+\end{document}
+
