@@ -9,6 +9,14 @@
 \usepackage{caption}
 \usepackage{subcaption}
 \usepackage{textcomp}
+\usepackage{multirow}
+%\usepackage{algorithm}
+%\usepackage[]{algorithm2e}
+%\usepackage{algorithmic}
+%\usepackage{algorithmicx}
+\usepackage{blindtext}
+\usepackage{algorithm}
+\usepackage[noend]{algpseudocode}
 
 \begin{document}
 
@@ -18,36 +26,48 @@
 
 \conferenceinfo{\textit{MediaEval 2014 Workshop,}}{October 16-17, 2014, Barcelona, Spain} 
 
+
 \numberofauthors{4}
 \author{
 \alignauthor
-Jo\~ao R. M. Palotti\\
+Jo\~{a}o R. M. Palotti\\
 \affaddr{Vienna University of Technology}\\
 %       \affaddr{Favoritenstrasse 9-11/188, 1040 Vienna, Austria}\\
 %       \affaddr{Austria}\\
        \email{palotti@ifs.tuwien.ac.at}
-%
 \alignauthor
-Navid Rekabsaz\\ %\titlenote{The secretary disavows any knowledge of this author's actions.}\\
+Navid Rekabsaz\\
        \affaddr{Vienna University of Technology}\\
-%       \affaddr{Favoritenstrasse 9-11/188, 1040 Vienna, Austria}\\
 %       \affaddr{Austria}\\
        \email{rekabsaz@ifs.tuwien.ac.at}
-%
 \and
 \alignauthor
-Mihai Lupu\\ %\titlenote{The secretary disavows any knowledge of this author's actions.}\\
+Mihai Lupu\\
        \affaddr{Vienna University of Technology}\\
-%       \affaddr{Favoritenstrasse 9-11/188, 1040 Vienna, Austria}\\
 %       \affaddr{Austria}\\
        \email{lupu@ifs.tuwien.ac.at}
 \alignauthor
-Allan Hanbury\\ %\titlenote{The secretary disavows any knowledge of this author's actions.}\\
+Allan Hanbury\\
        \affaddr{Vienna University of Technology}\\
-%       \affaddr{Favoritenstrasse 9-11/188, 1040 Vienna, Austria}\\
-%       \affaddr{Austria}\\
        \email{hanbury@ifs.tuwien.ac.at}
 }
+
+%OR:
+%\numberofauthors{1} 
+%\author{\alignauthor Jo\~ao R. M. Palotti, Navid Rekabsaz, Mihai Lupu, and Allan Hanbury\\
+%\affaddr{Vienna University of Technology} \\ %%% \affaddr{ Vienna, Austria} \\
+%\affaddr{Favoritenstrasse 9-11/188, 1040 Vienna, Austria}\\
+%\email{palotti,rekabsz, lupu, hanbury  @ifs.tuwien.ac.at}
+%}
+
+%\numberofauthors{1}
+%\author{
+%\alignauthor
+%Jo\~ao R. M. Palotti, Navid Rekabsaz, Mihai Lupu, Allan Hanbury\\
+%\affaddr{Vienna University of Technology}\\
+%\email{\{palotti, rekabsz, lupu, hanbury\}@ifs.tuwien.ac.at}
+%}
+
 \newcommand\todo[1]{\textcolor{red}{[#1]}}
 %uncomment to remove all todos:
 %\newcommand\todo[1]{}
@@ -56,9 +76,12 @@ Allan Hanbury\\ %\titlenote{The secretary disavows any knowledge of this author'
 
 \input{texs/00-abstract}
 \input{texs/01-intro}
-\input{texs/02-related}
+
+\begin{section}{Methods}
+\input{texs/02-filter}
 \input{texs/03-text}
 \input{texs/04-cluster}
+\end{section}
 \input{texs/05-experiments}
 \input{texs/06-conclusion}
 

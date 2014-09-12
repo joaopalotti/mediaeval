@@ -1,10 +1,52 @@
 
 \begin{section}{Experiments}
 
+Some text goes here...
+
 \begin{subsection}{Runs Settings}
+
+\blindtext[1]
+\begin{table*}[htb]
+%\footnotesize
+\scriptsize
+\begin{tabular}{c|c|c|c|c}
+\toprule 
+\textbf{Run} & \textbf{Pre-Filtering} & \textbf{Re-Ranking} & \textbf{Clustering} & \textbf{Credibility}\tabularnewline
+\midrule
+\textbf{1} & Based on ML & - & Combined on HOG,CN3x3,CN & -\tabularnewline
+\textbf{2} & - & Word2Vec & Metis on Text Similarity & -\tabularnewline
+\textbf{3} & - & Word2Vec & Combined on HOG,CN3x3,CN & -\tabularnewline
+\textbf{4} & - & Word2Vec & Combined on HOG,CN3x3,CN & ML to remove elements\tabularnewline
+\textbf{5} & Based on ML & Word2Vec & Combined on HOG,CN3x3,CN & ML to re-rank elements\tabularnewline
+\bottomrule 
+\end{tabular}
+\end{table*}
+
+\todo{check if we want to add more details or remove them}
 \end{subsection}
 
 \begin{subsection}{Results}
+\blindtext[1]
+
+\begin{table*}[hbt]
+%\footnotesize
+\scriptsize
+\begin{tabular}{c|c|c|c|c|c|c|c|c|c|c|c|c}
+\toprule 
+\multirow{2}{*}{\textbf{Run}} & \multicolumn{6}{c|}{\textbf{Development Set}} & \multicolumn{6}{c}{\textbf{Test Set}}\tabularnewline
+\cmidrule{2-13} 
+ & \textbf{P@10} & \textbf{CR@10} & \textbf{F1@10} & \textbf{P@20} & \textbf{CR@20} & \textbf{F@20} & \textbf{P@10} & \textbf{CR@10} & \textbf{F1@10} & \textbf{P@20} & \textbf{CR@20} & \textbf{F@20}\tabularnewline
+\midrule
+\textbf{1} & 0.830 & 0.294 & 9,431 & 0.778 & 0.477 & 0.588 & 0.796 & 0.284  & 0.414  & 0.748  & 0.462  & 0.564\tabularnewline
+\textbf{2} & 0.903 & 0.262 & 0.400 & 0.870 & 0.425 & 0.564 & 0.806 & 0.251  & 0.377  & 0.773  & 0.381  & 0.501\tabularnewline
+\textbf{3} & 0.870 & 0.301 & 0.444 & 0.813 & 0.483 & 0.601 & 0.794 & 0.281  & 0.410  & 0.744  & 0.449  & 0.553\tabularnewline
+\textbf{4} & 0.890 & 0.297 & 0.441 & 0.827 & 0.503 & 0.619 & 0.806 & 0.280 & 0.412 & 0.754  & 0.443 &  0.552\tabularnewline
+\textbf{5} & 0.837 & 0.299 & 0.435 & 0.792 & 0.478 & 0.588 & 0.780 & 0.276 & 0.403 & 0.729 & 0.444 &  0.546\tabularnewline
+\bottomrule 
+\end{tabular}
+\end{table*}
+
+
 \end{subsection}
 
 \end{section}
