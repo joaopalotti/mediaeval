@@ -1,0 +1,49 @@
+###############################################################################
+###############################################################################
+###############################################################################
+#RUN 1: (visual only)
+#BEST TRAINING: 0.830 0.294 0.431 0.778 0.477 0.588
+%time %run similarity.py --working_dataset "dev2014" -m"multigraph" -a"all" -o"RUN1_visual.train.run" -v"HOG" -v"CN" -v"CN3x3" -b"cosine" -b"chebyshev" -e"test.csv" --pmin 2 --pmean 1.5 --pmax 2  --pimin 0.1 --pimean 0.2 --pimax 0.3 -f -s -d"dev2013" -d"test2013"
+
+#TEST: 0.796   0.284   0.414   0.748   0.462   0.564
+%time %run similarity.py --working_dataset "test2014" -m"multigraph" -a"all" -o"RUN1_visual.test.run" -v"HOG" -v"CN" -v"CN3x3" -b"cosine" -b"chebyshev" -e"test.csv" --pmin 2 --pmean 1.5 --pmax 2  --pimin 0.1 --pimean 0.2 --pimax 0.3 -f -s -d"dev2013" -d"test2013" -d"dev2014"
+
+###############################################################################
+###############################################################################
+###############################################################################
+#RUN2: (text only)
+#BEST TRAINING: 0.903 0.262 0.400 0.870 0.425 0.564
+run similarity.py --working_dataset "dev2014" -m"textsim" -o"RUN2_text.train.run" -n"trec.run" -t
+
+#TEST: 0.806   0.251   0.377   0.773   0.381   0.501
+run similarity.py --working_dataset "test2014" -m"textsim" -o"RUN2_text.test.run" -n"trec_notlimited.run.test" -t
+
+###############################################################################
+###############################################################################
+###############################################################################
+#RUN3: (visual + text)
+#BEST TRAINING: 0.870 0.301 0.444 0.813 0.483 0.601
+%time %run similarity --method "multigraph" -a"all" --working_dataset "dev2014" -b"chebyshev" -b "cosine" -o RUN3_textvisual.train.run -e "multi.csv" -v"HOG" -v"CN3x3" -v"CN" --pmin 1.0 --pmean 1.0 --pmax 5.0 --pimin 0.1 --pimean 0.2 --pimax 0.3 -u -n"trec.run"
+
+#TEST: 0.794   0.281   0.410   0.744   0.449   0.553
+%time %run similarity --method "multigraph" -a"all" --working_dataset "test2014" -b"chebyshev" -b"cosine" -o RUN3_textvisual.test.run -e "multi.csv" -v"HOG" -v"CN3x3" -v"CN" --pmin 1.0 --pmean 1.0 --pmax 5.0 --pimin 0.1 --pimean 0.2 --pimax 0.3 -u -n"trec_notlimited.run.test"
+
+###############################################################################
+###############################################################################
+###############################################################################
+#RUN4: (creedibility)
+#TRAINING: 0.890 0.297 0.441 0.827 0.503 0.619
+%time %run similarity --method "multigraph" -a"all" --working_dataset "dev2014" -b"chebyshev" -b "cosine" -o RUN4_cred.train.run -e "cred.csv" -u -v"HOG" -v"CN3x3" -v"CN" --pmin 2.0 --pmean 1.0 --pmax 3.0 --pimin 0.1 --pimean 0.2 --pimax 0.3 -c -n"trec.run"
+
+#TEST: 0.806   0.280   0.412   0.754   0.443   0.552
+%time %run similarity --method "multigraph" -a"all" --working_dataset "test2014" -b"chebyshev" -b "cosine" -o RUN4_cred.test.run -e "cred.csv" -u -v"HOG" -v"CN3x3" -v"CN" --pmin 2.0 --pmean 1.0 --pmax 3.0 --pimin 0.1 --pimean 0.2 --pimax 0.3 -c -n"trec_notlimited.run.test"
+
+###############################################################################
+###############################################################################
+###############################################################################
+#RUN 5:
+#TRAINING: 0.837 0.299 0.435 0.792 0.478 0.588
+%time %run similarity --method "multigraph" -a"all" --working_dataset "dev2014" -b"chebyshev" -b "cosine" -o RUN5_dev.txt -e "cred.csv" -u -v"HOG" -v"CN3x3" -v"CN" --pmin 2.0 --pmean 1.0 --pmax 3.0 --pimin 0.1 --pimean 0.2 --pimax 0.3 -c -n"trec.run" -s -f -d"dev2013" -d"test2013"
+# TEST: 0.780   0.276   0.403   0.729   0.444   0.546
+run similarity --method "multigraph" -a"all" --working_dataset "test2014" -b"chebyshev" -b "cosine" -o RUN5.txt -e "cred.csv" -u -v"HOG" -v"CN3x3" -v"CN" --pmin 2.0 --pmean 1.0 --pmax 3.0 --pimin 0.1 --pimean 0.2 --pimax 0.3 -c -n"trec_notlimited.run.test" -s -f -d"dev2013" -d"test2013" -d"dev2014"
+
