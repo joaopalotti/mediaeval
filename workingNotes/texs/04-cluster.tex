@@ -68,20 +68,24 @@ Algorithm~\ref{alg:merge} shows the algorithm in more details.
 \While{L.hasElement()}
 \State $\textit{e} \gets \text{L.pop()}$
 \State $\text{include} \gets \text{True}$
+
+\State $\text{TempList} \gets \text{[ ]}$
 \ForAll {Element $ie$ in finalList}
-\If {F[e][ie] > maxvalue} 
-\State $\text{include} \gets \text{False}$
-\Break
-\EndIf
-\If {F[e][ie] > minvalue} 
-\State $\text{include} \gets \text{False}$
-\Break
-\EndIf
-\If {F[e][ie] > meanvalue} 
-\State $\text{include} \gets \text{False}$
-\Break
-\EndIf
+\State $\text{TempList} \gets \text{F[e][ie]}$
 \EndFor
+
+\If {max(TempList) > maxvalue} 
+\State $\text{include} \gets \text{False}$
+\Break
+\EndIf
+\If {min(TempList) > minvalue} 
+\State $\text{include} \gets \text{False}$
+\Break
+\EndIf
+\If {mean(TempList) > meanvalue} 
+\State $\text{include} \gets \text{False}$
+\Break
+\EndIf
 \If {include} 
 \State $\text{finalList.push(ie)}$
 \Else

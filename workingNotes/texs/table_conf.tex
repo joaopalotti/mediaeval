@@ -1,0 +1,21 @@
+
+\begin{table*}[htb]
+%\footnotesize
+\centering
+\scriptsize
+\begin{tabular}{c|c|c|c|c}
+\toprule 
+\textbf{Run} & \textbf{Pre-Filtering} & \textbf{Re-Ranking} & \textbf{Clustering} & \textbf{Credibility}\tabularnewline
+\midrule
+\textbf{1} & Based on ML & - & Combined on HOG,CN3x3,CN & -\tabularnewline
+\textbf{2} & - & Word2Vec & Metis on Text Similarity & -\tabularnewline
+\textbf{3} & - & Word2Vec & Combined on HOG,CN3x3,CN & -\tabularnewline
+\textbf{4} & - & Word2Vec & Combined on HOG,CN3x3,CN & ML to remove elements\tabularnewline
+\textbf{5} & Based on ML & Word2Vec & Combined on HOG,CN3x3,CN & ML to re-rank elements\tabularnewline
+\bottomrule 
+\end{tabular}
+\caption{Each run and its settings.}
+\label{table:config}
+\end{table*}
+
+
