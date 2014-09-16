@@ -26,7 +26,6 @@
 
 \conferenceinfo{\textit{MediaEval 2014 Workshop,}}{October 16-17, 2014, Barcelona, Spain} 
 
-
 \numberofauthors{4}
 \author{
 \alignauthor
@@ -78,11 +77,18 @@ Allan Hanbury\\
 \input{texs/01-intro}
 
 \begin{section}{Methods}
-We emplloyed a different set of methods in different runs. Here we explain all the approches and on Table~\ref{table:config} we show what was used in which run.
+We employed a different set of methods in different runs. 
+Here we explain all the approaches and on Table~\ref{table:config} we show what was used in which run.
 \input{texs/02-filter}
 \input{texs/03-text}
 \input{texs/04-cluster}
+
+\begin{subsection}{Credibility}
+The credibility data was not available for 2013, therefore the amount of data was relatively small. 
+Even so, we tested two approaches: we trained a Logistic Regressors classifier to learn if a document is relevant or not based on the credibility data (used only faceProportion, locationSimilarity, uploadFrequency and bulkProportion) and we (1) filtered out documents set as irrelevant and (2) moved to the bottom of the list irrelevant documents.
+\end{subsection}
 \end{section}
+
 \input{texs/05-experiments}
 \input{texs/06-conclusion}
 
