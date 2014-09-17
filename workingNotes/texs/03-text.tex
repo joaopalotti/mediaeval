@@ -1,8 +1,10 @@
 \begin{subsection}{Re-ranking}
 
-Talk about word2vec.
+For re-ordering the results, we used text of title, tag and description of the photos. For text pre-processing, we de-compounded the terms using a greedy dictionary based approach. In the next step, we expand the query using the first sentence of wikipedia which helps for place disambiguation. We tested four document similarity methods based on Solr~\footnote{http://lucene.apache.org/solr/}, Random Indexing~\footnote{https://code.google.com/p/semanticvectors/}, Galago~\footnote{http://sourceforge.net/p/lemur/galago} and Word2Vec~\cite{word2vec}. Among all, we found the best result using a semantic similarity approach based on Word2Vec.
 
-Failures?
+Word2Vec provides vector representation of words by using deep learning. We used the Word2Vec library~\footnote{https://code.google.com/p/word2vec/} and trained a model on wikipedia and then used the vector representation of words to calculate the text similarity of the query to each photo.
+
+Similar to the pre-filtering, we extract three binary attributes : Number of views, distance between photos and POIs if it is more than 8 and description length if it is more than 2000 characters. All features were applied in a linear regression model in order to re-order the list.
 
 \end{subsection}
 
