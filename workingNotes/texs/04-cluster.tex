@@ -4,10 +4,10 @@
 We worked on three different methods for clustering, all based on similarity measures.
 %They share the idea of creating a similarity graph $G$ (potentially complete) in which each vertice $V$ represents an images for one point of interest, and
 %each edge $E$ represents the similarity between two images accoring to a similarity metric $M$ based on a set of features $F$.
-They share the idea of creating a similarity graph (potentially complete) in which each vertice represents an images for one point of interest, and
-each edge represents the similarity between two images accoring to a similarity metric based on a set of features.
+They share the idea of creating a similarity graph (potentially complete) in which each vertex represents an images for one point of interest, and
+each edge represents the similarity between two images according to a similarity metric based on a set of features.
 %Figure~\ref{fig:bigben} shows a small sample based on 4 images of Big Ben.
-Next, we are going to expain each algorithm and how we combined them.
+Next, we are going to explain each algorithm and how we combined them.
 
 %\begin{figure}[h!]
 %\centering
@@ -40,17 +40,17 @@ Hierarchical clustering~\cite{hierarchical} is based on the idea of a hierarchy 
 \begin{subsubsection}{Merging}
 
 After applying different clustering methods on the whole 2013 and 2014 development set, 
-we reached the conclusion that it is acctually difficult to predict which method would work best at 2014 testset.
+we reached the conclusion that it is actually difficult to predict which method would work best at 2014 testset.
 Therefore, we decided to come up with a merging algorithm, which should take into account different point of views from each clustering method and/or feature set,
 and potentially would be more robust than using one single algorithm.
 
 First, we run each algorithm using a different feature sets (for example, HOG, CN, and text similarity) and different distance measures (in all the experiments we used both cosine and chebyshev) for each POI. It generates a great number of possible cluster results (3 algorithms $\times$ 3 feature sets $\times$ 2 measures $=$ 18 possible ways to make clusters). 
 We then count the frequency that two documents occur in the same cluster, this is the main measure we used.
 
-Once all the clusters are made and the co-occorence of images are counted, we start the re-ranking procedured, moving one pivot document (in this case, the top ranked document in the original list) from the original list to a re-ranked list. Then, for each document $D_i$ from the original list, we count the number of times that $D_i$ occured together with each element in the re-ranked list. 
-If any of these frequency values is bigger than a pre-defined $Max\_Threshold$ (6 out of 18, for example), we do not add $D_i$ to the re-ranked list, because $D_i$ was co-occured frequently with another document that is already in the final ranked list. However, if $D_i$ was not frequently seen with any other document, than we remove $D_i$ from the original list and add it at the end of the re-ranked list.
+Once all the clusters are made and the co-occurrence of images are counted, we start the re-ranking procedure, moving one pivot document (in this case, the top ranked document in the original list) from the original list to a re-ranked list. Then, for each document $D_i$ from the original list, we count the number of times that $D_i$ occurs together with each element in the re-ranked list. 
+If any of these frequency values is bigger than a pre-defined $Max\_Threshold$ (6 out of 18, for example), we do not add $D_i$ to the re-ranked list, because $D_i$ was co-occurred frequently with another document that is already in the final ranked list. However, if $D_i$ was not frequently seen with any other document, than we remove $D_i$ from the original list and add it at the end of the re-ranked list.
 After testing all the elements from the original list, we can start over again from the first document in the original list not yet moved to the re-ranked list, but this time accepting any document that is not see $Max\_Threshold + Max\_increment$. Once all documents were moved from the original list to the re-ranked list, the procedure ends.
-In our algorithm, we also used a $Min_Threshold$ and a $Mean_Threashold$, but other variables, such as the mean or any percentile, could be employed as well.
+In our algorithm, we also used a $Min_Threshold$ and a $Mean_Threshold$, but other variables, such as the mean or any percentile, could be employed as well.
 
 %Algorithm~\ref{alg:merge} shows the algorithm in more details.
 %\renewcommand{\algorithmicrequire}{\textbf{Input:}}
