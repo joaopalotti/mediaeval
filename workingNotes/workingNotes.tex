@@ -73,24 +73,194 @@ Allan Hanbury\\
 
 \maketitle
 
-\input{texs/00-abstract}
-\input{texs/01-intro}
+\begin{abstract}
+This paper describes the efforts of Vienna University of Technology (TUW) in the MediaEval 2014 Retrieving Diverse Social Images challenge.
+Our approach consisted of 3 steps: (1) a pre-filtering based on Machine Learning, (2) a re-ranking based on Word2Vec, and (3) a clustering part based on a ensemble of clusters. 
+Our best run reached a F@20 of 0.564. 
+
+\end{abstract}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% INTRODUCTION %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{section}{Introduction}
+
+Diversification is an interesting problem for the information retrieval community, 
+being a challenge for both text and multimedia data.
+Focused on image retrieval, the MediaEval 2014 Retrieving Diverse Social Images Task \cite{overview14}
+was proposed to foster the development and evaluation of methods for retrieving 
+diverse images of different point of interest.
+
+%These tables are put here, just because I want them to be in the second page of this report.
+\input{table_conf}
+\input{table_results}
+\end{section}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% INTRODUCTION %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \begin{section}{Methods}
-We employed a different set of methods in different runs. 
-Here we explain all the approaches and on Table~\ref{table:config} we show what was used in which run.
-\input{texs/02-filter}
-\input{texs/03-text}
-\input{texs/04-cluster}
+We employed a distinct set of methods for each run. 
+Here we explain all the approaches and on Table~\ref{table:config} we show what was used in each run.
+
+\begin{subsection}{Pre-Filtering}
+
+We employed a pre-filtering step to filter out potential irrelevant pictures.
+For the 2014 development set, we calculated that 70\% (6256) are relevant images, while 30\% (2667) were not.
+The goal of this step is to increase the percentage of relevant images. 
+After applying a Logistic Regression classifier trained on the 2013 data, we could reach a ratio of 74\% (5780)/26\% (2026), removing a total of 1117 images. As features, we used the distance between images and POIs, number of views, length of descriptions and titles, images' license, part of the day (morning, afternoon, night) and the number of times the POI appeared in the title and descriptions of an image.
+
+\end{subsection}
+
+
+\begin{subsection}{Re-ranking}
+
+For re-ordering the results, we used the title, tag and description of the photos. For text pre-processing, we de-compounded the terms using a greedy dictionary based approach. In the next step, we expand the query using the first sentence of Wikipedia which helps for place disambiguation. We tested four document similarity methods based on Solr\footnote{http://lucene.apache.org/solr/}, Random Indexing\footnote{https://code.google.com/p/semanticvectors/}, Galago\footnote{http://sourceforge.net/p/lemur/galago} and Word2Vec \cite{word2vec}. Among all, we found the best result using a semantic similarity approach based on Word2Vec.
+
+Word2Vec provides vector representation of words by using deep learning. We used the Word2Vec library\footnote{https://code.google.com/p/word2vec/} and trained a model on Wikipedia and then used the vector representation of words to calculate the text similarity of the query to each photo.
+
+Similar to the pre-filtering, we extract three binary attributes: Number of views, distance between photos and POIs if it is more than 8 and description length if it is more than 2000 characters. All features were applied in a linear regression model in order to re-order the list.
+\todo{Number of views is binary?}
+
+\end{subsection}
+
+
+\begin{subsection}{Clustering}
+
+We worked on three methods for clustering, all based on similarity measures.
+%They share the idea of creating a similarity graph $G$ (potentially complete) in which each vertice $V$ represents an images for one point of interest, and
+%each edge $E$ represents the similarity between two images accoring to a similarity metric $M$ based on a set of features $F$.
+They share the idea of creating a similarity graph (potentially complete) in which each vertex represents an image for one point of interest, and
+each edge represents the similarity between two images. Different similarity metrics and different set of features can be used.
+%Figure~\ref{fig:bigben} shows a small sample based on 4 images of Big Ben.
+Next, we explain each algorithm and how we combined them.
+
+%\begin{figure}[h!]
+%\centering
+%\includegraphics[width=0.3\textwidth]{figs/bigben}
+%\caption{This figure is terrible...I will improve it soon}
+%\label{fig:bigben}
+%\end{figure}
+
+\begin{subsubsection}{Metis}
+
+%The best way for partitioning $G$ is NP-hard...
+The first approach, called Metis \cite{metis},
+tries to collapse similar and neighbor vertices, reducing the initial graph to a smaller one (known as coarsening step).
+Then, it divides the coarsest graph into a pre-defined number of graphs, generating the clusters.  
+
+\end{subsubsection}
+
+\begin{subsubsection}{Spectral}
+
+Spectral clustering \cite{spectral} can also be seen as a graph partitioning method, which measures both the total dissimilarity between groups 
+as well as the total similarity within a group. We used the Scikit-learn\footnote{\url{http://scikit-learn.org/stable/modules/generated/sklearn.cluster.SpectralClustering.html}} implementation of this method. 
+
+\end{subsubsection}
+
+\begin{subsubsection}{Hierarchical}
+Hierarchical clustering \cite{hierarchical} is based on the idea of a hierarchy of clusters. A tree is built in a way that the root gathers all the samples and the leaves are clusters with only one sample. This tree can be built bottom-up or top down. We used the bottom-up implementation from Scikit-learn\footnote{\url{http://scikit-learn.org/stable/modules/generated/sklearn.cluster.AgglomerativeClustering.html}}.
+
+\end{subsubsection}
+
+\begin{subsubsection}{Merging}
+
+%After applying different clustering methods on the whole 2013 and 2014 development set, 
+We found that the clustering methods were unstable as modifications in the filtering step caused a great impact in the clustering step.
+Therefore, we decided to implement a merging heuristic, which takes into account different point of views from each clustering method and/or feature set,
+being potentially more robust than using one single algorithm.
+
+First, we run each clustering algorithm using a different feature sets (for example, HOG, CN, and text similarity) and different distance measures (in all experiments we used both cosine and Chebyshev) for each POI. It generates a great number of possible cluster results (3 algorithms $\times$ 3 feature sets $\times$ 2 measures $=$ 18 possible ways to make clusters). 
+We then created a re-ranking heuristic based only on the frequency that two documents occur in the same cluster.
+
+%Once all the clusters are made and the co-occurrence of images are counted,
+The goal of the re-ranking based on the cluster results is to move all documents from the original list (Flickr ranking) to a re-ranked list.
+We start the procedure moving one pivot document (in this work, the top ranked document in the original list) to the re-ranked list. Then, for each document $D_i$ from the original list, we count the number of times that $D_i$ occurred together with each element in the re-ranked list. 
+If any of these frequency values is bigger than a pre-defined $Max\_Threshold$ (6 out of 18, for example), we do not move $D_i$ to the re-ranked list, because $D_i$ was co-occurred frequently with another document that is already in the re-ranked list. However, if $D_i$ was not frequently seen with any other document, than we move $D_i$ from the original list to the end of the re-ranked list.
+After trying to move all the documents from the original list to the re-ranked list, we increase the $Max\_Threshold$, so we can accept an image even that a greater number of clustering methods assign that image to the same cluster of another image. Usually this is the case of the least ranked element.
+The algorithm stops when all documents (or the 50 first) are moved from the original list to the re-ranked one.
+%After testing all the elements from the original list, we can start over again from the first document in the original list not yet moved to the re-ranked list, but this time accepting any document that is not see $Max\_Threshold + Max\_increment$. Once all documents were moved from the original list to the re-ranked list, the procedure ends.
+%testing all the elements from the original list, we can start over again from the first document in the original list not yet moved to the re-ranked list, but this time accepting any document that is not see $Max\_Threshold + Max\_increment$. Once all documents were moved from the original list to the re-ranked list, the procedure ends.
+We also used a $Min\_Threshold$ and a $Mean\_Threshold$, but other measures, such as the mean or any percentile could be easily employed as well.
+
+%Algorithm~\ref{alg:merge} shows the algorithm in more details.
+%\renewcommand{\algorithmicrequire}{\textbf{Input:}}
+%\renewcommand{\algorithmicensure}{\textbf{Output:}}
+%\newcommand{\algorithmicbreak}{\textbf{break}}
+%\newcommand{\Break}{\State \algorithmicbreak}
+%\algrenewcommand\Return{\State \algorithmicreturn{} }%
+%\begin{algorithm}
+%\caption{Merging of different clustering methods}
+%\label{alg:merge}
+%\begin{algorithmic}[1]
+%\Require L, F, min, mean, max, min\_increment, mean\_increment, max\_increment
+%\Ensure FinalList 
+
+%\Procedure{Merge}{}
+%\State $\text{FinalList} \gets \text{[ ]}$
+%\State $\textit{pivot} \gets \text{L.pop()}$
+%\State $\text{finalList.push(pivot)}$
+%\While{L.hasElement()}
+%\State $\textit{e} \gets \text{L.pop()}$
+%\State $\text{include} \gets \text{True}$
+
+%\State $\text{TempList} \gets \text{[ ]}$
+%\ForAll {Element $ie$ in finalList}
+%\State $\text{TempList} \gets \text{F[e][ie]}$
+%\EndFor
+
+%\If {max(TempList) > maxvalue} 
+%\State $\text{include} \gets \text{False}$
+%\Break
+%\EndIf
+%\If {min(TempList) > minvalue} 
+%\State $\text{include} \gets \text{False}$
+%\Break
+%\EndIf
+%\If {mean(TempList) > meanvalue} 
+%\State $\text{include} \gets \text{False}$
+%\Break
+%\EndIf
+%\If {include} 
+%\State $\text{finalList.push(ie)}$
+%\Else
+%\State $\text{L.push(ie)}$
+%\EndIf
+%\State $\text{min} \gets \text{min} + \text{min\_increment}$
+%\State $\text{max} \gets \text{max} + \text{max\_increment}$
+%\State $\text{mean} \gets \text{mean} + \text{mean\_increment}$
+%\EndWhile
+%\Return finalList
+%\EndProcedure
+%\end{algorithmic}
+%\end{algorithm}
+
+\end{subsubsection}
+
+\end{subsection}
 
 \begin{subsection}{Credibility}
-The credibility data was not available for 2013, therefore the amount of data was relatively small. 
-Even so, we tested two approaches: we trained a Logistic Regression classifier to learn if a document is relevant or not based on the credibility data (used only faceProportion, locationSimilarity, uploadFrequency and bulkProportion) and we (1) filtered out documents set as irrelevant and (2) moved to the bottom of the list irrelevant documents.
+%The credibility data was not available for 2013, therefore the amount of data was relatively small. 
+%Even so, 
+Our approaches were based on Machine Learning: we trained a Logistic Regression classifier to learn if a document is relevant or not based on the credibility data (used only face proportion, location similarity, upload frequency and bulk proportion).
+We tested two methods: we (1) filtered out documents set as irrelevant for Run4 and (2) moved to the bottom of the list irrelevant documents for Run5.
+
 \end{subsection}
 \end{section}
 
-\input{texs/05-experiments}
-\input{texs/06-conclusion}
+\begin{section}{Experiments}
+
+We submitted all 5 runs, varying on the use of pre-filtering, the re-ranking method, the clustering approach and the use of credibility.
+Details are shown on Table~\ref{table:config} and the results are shown on Table~\ref{table:results}.
+
+% Moved to introduction, so the tables can be placed in the second page
+%\input{table_conf}
+%\input{table_results}
+\end{section}
+\begin{section}{Conclusion}
+
+Our experiments show that an ensemble of clusters can be a robust way to diversify results.
+Unfortunately our re-rank method did not work in the test set as well as it did in the development set.
+Last, the use of credibility also seem to have overfitted the development data, not being effective for the development set.
+
+\end{section}
 
 \paragraph{\textbf{ACKNOWLEDGMENTS}}
 This research was funded by the Austrian Science Fund (FWF) project number I1094-N23 (MUCKE) \todo{What else?}.
