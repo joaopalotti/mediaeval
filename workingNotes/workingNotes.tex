@@ -112,9 +112,9 @@ After applying a Logistic Regression classifier trained on the 2013 data, we cou
 
 \begin{subsection}{Re-ranking}
 
-For re-ordering the results, we used the title, tags and description of the photos. For text pre-processing, we de-compounded the terms using a greedy dictionary based approach. In the next step, we expand the query using the first sentence of Wikipedia which helped for place disambiguation. We tested four document similarity methods based on Solr\footnote{http://lucene.apache.org/solr/}, Random Indexing\footnote{https://code.google.com/p/semanticvectors/}, Galago\footnote{http://sourceforge.net/p/lemur/galago} and Word2Vec \cite{word2vec}. Among all, we found the best result using a semantic similarity approach based on Word2Vec.
+For re-ordering the results, we used the title, tags and description of the photos. For text pre-processing, we de-compounded the terms using a greedy dictionary based approach. In the next step, we expand the query using the first sentence of Wikipedia which helped for place disambiguation. We tested four document similarity methods based on Solr\footnote{http://lucene.apache.org/solr/}, Random Indexing\footnote{https://code.google.com/p/semanticvectors/}, Galago\footnote{http://sourceforge.net/p/lemur/galago} and Word2Vec\footnote{https://code.google.com/p/word2vec/}. Among all, we found the best result using a semantic similarity approach based on Word2Vec.
 
-Word2Vec provides vector representation of words by using deep learning. We used the Word2Vec library\footnote{https://code.google.com/p/word2vec/} and trained a model on Wikipedia and then used the vector representation of words to calculate the text similarity of the query to each photo.
+Word2Vec \cite{word2vec} provides vector representation of words by using deep learning. We trained a model on Wikipedia and then used the vector representation of words to calculate the text similarity of the query to each photo.
 
 We extracted three binary attributes: (1) if the photo had any view, (2) if the distance between a photo and the POI is greater than 8 kilometers, and (3) if the description length has more than 2000 characters. All features were applied in a Linear Regression model in order to re-rank the list.
 
@@ -168,24 +168,36 @@ Scikit-learn.
 \begin{subsubsection}{Merging}
 
 %After applying different clustering methods on the whole 2013 and 2014 development set, 
-We found that the clustering methods were unstable as modifications in the filtering step caused a great impact in the clustering step.
-Therefore, we decided to implement a merging heuristic, which takes into account different point of views from each clustering method and/or feature set,
+We found that the clustering methods were unstable as modifications in the filtering step caused a great variation in the clustering step.
+Therefore, we decided to implement a merging heuristic, which takes into account different points of view from each clustering method and/or feature set,
 being potentially more robust than using one single algorithm.
 
-First, we run each clustering algorithm using a different feature sets (for example, HOG, CN, and text similarity) and different distance measures (in all experiments we used both cosine and Chebyshev) for each POI. It generates a large number of possible cluster results (3 algorithms $\times$ 3 feature sets $\times$ 2 measures $=$ 18 possible ways to make clusters). 
-We then created a re-ranking heuristic based only on the frequency that two documents occur in the same cluster.
+%First, we run each clustering algorithm using a different feature set (for example, HOG, CN, and text similarity) and a different distance measure (in our experiments we used both cosine and Chebyshev) for each POI. It generates a large number of possible cluster results (according to the numbers in this example: 3 algorithms $\times$ 3 feature sets $\times$ 2 measures $=$ 18 possible ways to make clusters). 
+%We then created a re-ranking heuristic based only on the frequency that two documents occur in the same cluster.
 
-%Once all the clusters are made and the co-occurrence of images are counted,
-As input for this procedure we need a frequency matrix of the images of a POI and an original ranking list. 
-As output, a re-ranked list is created.
-%moves all documents from the original list (Flickr ranking) to a re-ranked list.
-We start the procedure moving one pivot document (in this work, the top ranked document in the original list) to the re-ranked list. Then, for each document $D_i$ from the original list, we count the number of times that $D_i$ occurred together with each element in the re-ranked list. 
-If any of these frequency values is bigger than a pre-defined $Max\_Threshold$ (6 out of 18, for example), we do not move $D_i$ to the re-ranked list, because $D_i$ was co-occurred frequently with another document that is already in the re-ranked list. However, if $D_i$ was not frequently seen with any other document, then we move $D_i$ from the original list to the end of the re-ranked list.
-After trying to move all the documents from the original list to the re-ranked list, we increase the $Max\_Threshold$, so we can accept an image even that a greater number of clustering methods assign that image to the same cluster of another image. Usually this is the case of the least ranked elements.
-The algorithm stops when all documents (or the 50 first) are moved from the original list to the re-ranked one.
+%%%%
+%Each clustering algorithm takes a feature set and a distance measure and outputs a possible way to cluster the images of a POI.
+%%%%
+
+Given $c$ different clustering algorithms, $f$ different feature sets, and $m$ distance measures, there are $c \times f \times m$ possible cluster sets. 
+In our work, we used the 3 algorithms described, 3 features sets (HOG, CN, CN3x3) and 2 distance measures (cosine and Chebyshev), giving us 18 different cluster sets for each POI.
+We can then compute a \emph{frequency matrix} that will hold for every two documents the number of cluster sets in which they occur in the same cluster.
+Next we create a re-ranked list of the images from the original list (Flickr ranking) based only on this frequency matrix.
+In order to do that, we define a threshold $t$ and a function $F$ on a set of frequencies that determine when a document should be moved to the re-ranked list.
+Suppose the re-ranked list contains the documents $D_1, ..., D_i$ and we want to know if a document $D_k$ in the original list can be moved to the re-ranked list at position $i+1$. We compute the frequencies $f_1, ..., f_i$ between $D_k$ and each $D_1,...,D_i$ and if $F(f_1, ..., f_i) < t$, $D_k$ is moved to the re-ranked list, otherwise it is not. 
+After all the elements in the original list are processed, if there are still remaining documents not moved to the re-ranked list, the value of $t$ is increased and these documents are reprocessed. The algorithm continues until there are no documents left in the original list.
+The functions for $F$ used in this work were Max, Min and Mean, but other measures, such as mode, median or any percentile could be easily employed as well.
+
+%We start the procedure moving one pivot document (in this work, the top ranked document in the original list) to the re-ranked list. 
+%Then, for each document $D_i$ from the original list, we count the number of times that $D_i$ occurred together with each element in the re-ranked list. 
+%If any of these frequency values is bigger than a pre-defined $Max\_Threshold$ (6 out of 18, for example), we do not move $D_i$ to the re-ranked list, because $D_i$ co-occurred frequently with another document that is already in the re-ranked list. However, if $D_i$ was not frequently seen with any other document, then we move $D_i$ from the original list to the end of the re-ranked list.
+%After trying to move all the documents from the original list to the re-ranked list, we increase the $Max\_Threshold$ to allow more documents in the re-ranked list.
+%, so we can accept an image even that a greater number of clustering methods assign that image to the same cluster of another image.
+%Usually this is the case of the least ranked elements.
+%The algorithm stops when all documents are moved from the original list to the re-ranked one.
 %After testing all the elements from the original list, we can start over again from the first document in the original list not yet moved to the re-ranked list, but this time accepting any document that is not see $Max\_Threshold + Max\_increment$. Once all documents were moved from the original list to the re-ranked list, the procedure ends.
 %testing all the elements from the original list, we can start over again from the first document in the original list not yet moved to the re-ranked list, but this time accepting any document that is not see $Max\_Threshold + Max\_increment$. Once all documents were moved from the original list to the re-ranked list, the procedure ends.
-We also used a $Min\_Threshold$ and a $Mean\_Threshold$, but other measures, such as the mean or any percentile could be easily employed as well.
+%We also use a $Min\_Threshold$ and a $Mean\_Threshold$, but other measures, such as the median or any percentile could be easily employed as well.
 
 %Algorithm~\ref{alg:merge} shows the algorithm in more details.
 %\renewcommand{\algorithmicrequire}{\textbf{Input:}}
@@ -246,8 +258,8 @@ We also used a $Min\_Threshold$ and a $Mean\_Threshold$, but other measures, suc
 \begin{subsection}{Credibility}
 %The credibility data was not available for 2013, therefore the amount of data was relatively small. 
 %Even so, 
-Our approaches were based on Machine Learning (ML): we trained a Logistic Regression classifier to learn if a document is relevant or not based on the credibility data (used only face proportion, location similarity, upload frequency and bulk proportion).
-We tested two methods: we (1) filtered out documents set as irrelevant for Run4 and (2) moved to the bottom of the list irrelevant documents for Run5.
+Our approaches were based on Machine Learning (ML): we trained a Logistic Regression classifier to learn if a document was relevant or not based on the credibility data (used only face proportion, location similarity, upload frequency and bulk proportion).
+We tested two methods: (1) excluding documents set as irrelevant for Run4 and (2) moving to the bottom of the list irrelevant documents for Run5.
 
 \end{subsection}
 \end{section}
@@ -256,6 +268,9 @@ We tested two methods: we (1) filtered out documents set as irrelevant for Run4 
 
 We submitted all 5 runs, varying on the use of pre-filtering, the re-ranking method, the clustering approach and the use of credibility.
 Details are shown in Table~\ref{table:config} and the results are shown in Table~\ref{table:results}.
+Based on the development data, we were expecting Run3 and Run4 to be our best runs, but the results on the test data shows that we probably 
+overfitted the development set for the re-ranking and credibility part. The best result was that the cluster ensemble proved to be robust for this task.
+
 
 % Moved to introduction, so the tables can be placed in the second page
 %\input{table_conf}
