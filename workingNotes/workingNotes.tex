@@ -5,18 +5,18 @@
 \usepackage{graphicx}
 \usepackage{booktabs}
 \usepackage{url}
-\usepackage{verbatim} % to use \comment command to comment the undesirable tables
 \usepackage{caption}
 \usepackage{subcaption}
 \usepackage{textcomp}
 \usepackage{multirow}
-%\usepackage{algorithm}
-%\usepackage[]{algorithm2e}
-%\usepackage{algorithmic}
-%\usepackage{algorithmicx}
 \usepackage{blindtext}
 \usepackage{algorithm}
 \usepackage[noend]{algpseudocode}
+
+%Package to balance last page of two-column layout
+%\usepackage{flushend}
+
+\hyphenation{Media-Eval}
 
 \begin{document}
 
@@ -75,7 +75,7 @@ Allan Hanbury\\
 
 \begin{abstract}
 This paper describes the efforts of Vienna University of Technology (TUW) in the MediaEval 2014 Retrieving Diverse Social Images challenge.
-Our approach consisted of 3 steps: (1) a pre-filtering based on Machine Learning, (2) a re-ranking based on Word2Vec, and (3) a clustering part based on a ensemble of clusters. 
+Our approach consisted of 3 steps: (1) a pre-filtering based on Machine Learning, (2) a re-ranking based on Word2Vec, and (3) a clustering part based on an ensemble of clusters. 
 Our best run reached a F@20 of 0.564. 
 
 \end{abstract}
@@ -98,25 +98,26 @@ diverse images of different point of interest.
 
 \begin{section}{Methods}
 We employed a distinct set of methods for each run. 
-Here we explain all the approaches and in Table~\ref{table:config} we show what was used in each run.
+Here we explain all the approaches and in Table~\ref{table:config} we show the combinations used for each run.
 
 \begin{subsection}{Pre-Filtering}
-
 We employed a pre-filtering step to exclude likely irrelevant pictures.
-For the 2014 development set, we calculated that 70\% (6256) were relevant images, while 30\% (2667) were not.
-The goal of this step is to increase the percentage of relevant images. 
-After applying a Logistic Regression classifier trained on the 2013 data, we could reach a ratio of 74\% (5780)/26\% (2026), removing a total of 1117 images. As features, we used the distance between images and POIs, number of views, length of descriptions and titles, images' license, part of the day (morning, afternoon, night) and the number of times the POI appeared in the title and descriptions of an image.
-
+%For the 2014 development set, we calculated that 70\% (6256) were relevant images, while 30\% (2667) were not.
+The goal of this step is to increase the percentage of relevant images.
+We studied two approaches: (1) a filtering step based on a simplified version of Jain et al.~\cite{wsp13} experiments, removing images without any view, geotagged more than 8 km away from the point of interest (POI) and with a description length longer than 2000 characters; (2) we added more features, such as images' license, part of the day (morning, afternoon, night) and the number of times the POI appeared in the title and descriptions of an image, and used a Logistic Regression classifier trained on the 2013 and 2014 development 2014 data.
 \end{subsection}
 
 
 \begin{subsection}{Re-ranking}
 
-For re-ordering the results, we used the title, tags and description of the photos. For text pre-processing, we de-compounded the terms using a greedy dictionary based approach. In the next step, we expand the query using the first sentence of Wikipedia which helped for place disambiguation. We tested four document similarity methods based on Solr\footnote{http://lucene.apache.org/solr/}, Random Indexing\footnote{https://code.google.com/p/semanticvectors/}, Galago\footnote{http://sourceforge.net/p/lemur/galago} and Word2Vec\footnote{https://code.google.com/p/word2vec/}. Among all, we found the best result using a semantic similarity approach based on Word2Vec.
+For re-ordering the results, we used the title, tags and description of the photos. For text pre-processing, we de-compounded the terms using a greedy dictionary based approach. In the next step, we expand the query using the first sentence of Wikipedia which helped for place disambiguation. We tested four document similarity methods based on Solr\footnote{http://lucene.apache.org/solr/}, Random Indexing\footnote{https://code.google.com/p/semanticvectors/}, Galago\footnote{http://sourceforge.net/p/lemur/galago/} and Word2Vec\footnote{https://code.google.com/p/word2vec/}\cite{word2vec}. Among all, we found the best result using a semantic similarity approach based on Word2Vec.
 
-Word2Vec \cite{word2vec} provides vector representation of words by using deep learning. We trained a model on Wikipedia and then used the vector representation of words to calculate the text similarity of the query to each photo.
+Word2Vec provides vector representation of words by using deep learning. We trained a model on Wikipedia and then used the vector representation of words to calculate the text similarity of the query to each photo.
 
-We extracted three binary attributes: (1) if the photo had any view, (2) if the distance between a photo and the POI is greater than 8 kilometers, and (3) if the description length has more than 2000 characters. All features were applied in a Linear Regression model in order to re-rank the list.
+We extracted binary attributes based on Jain et al.~\cite{wsp13}, as made for the pre-filtering step and together with the Word2Vec scores, we used a Linear Regression to re-rank the results based on the development data.
+
+
+%: (1) if the photo had any view, (2) if the distance between a photo and the POI is greater than 8 kilometers, and (3) if the description length has more than 2000 characters. All features were applied in a Linear Regression model in order to re-rank the list.
 
 \end{subsection}
 
@@ -151,7 +152,7 @@ Then, it divides the coarsest graph into a pre-defined number of graphs, generat
 
 Spectral clustering \cite{spectral} can also be seen as a graph partitioning method, which measures both the total dissimilarity between groups 
 as well as the total similarity within a group. We used the 
-Scikit-learn\footnote{http://scikit-learn.org} 
+Scikit-learn\footnote{http://scikit-learn.org/} 
 %Scikit-learn\footnote{http://scikit-learn.org/stable/modules/generated/sklearn.cluster.SpectralClustering.html} 
 implementation of this method. 
 
@@ -159,7 +160,7 @@ implementation of this method.
 \end{subsubsection}
 
 \begin{subsubsection}{Hierarchical}
-Hierarchical clustering \cite{hierarchical} is based on the idea of a hierarchy of clusters. A tree is built in a way that the root gathers all the samples and the leaves are clusters with only one sample. This tree can be built bottom-up or top down. We used the bottom-up implementation from 
+Hierarchical clustering \cite{hierarchical} is based on the idea of a hierarchy of clusters. A tree is built in a way that the root gathers all the samples and the leaves are clusters with only one sample. This tree can be built bottom-up or top-down. We used the bottom-up implementation from 
 %Scikit-learn\footnote{http://scikit-learn.org/stable/modules/generated/sklearn.cluster.AgglomerativeClustering.html}}.
 Scikit-learn.
 
@@ -180,13 +181,13 @@ being potentially more robust than using one single algorithm.
 %%%%
 
 Given $c$ different clustering algorithms, $f$ different feature sets, and $m$ distance measures, there are $c \times f \times m$ possible cluster sets. 
-In our work, we used the 3 algorithms described, 3 features sets (HOG, CN, CN3x3) and 2 distance measures (cosine and Chebyshev), giving us 18 different cluster sets for each POI.
+In our work, we used the 3 algorithms described, 3 features sets (HOG, CN, CN3x3, see \cite{overview14} for details about these features) and 2 distance measures (cosine and Chebyshev), giving us 18 different cluster sets for each POI.
 We can then compute a \emph{frequency matrix} that will hold for every two documents the number of cluster sets in which they occur in the same cluster.
 Next we create a re-ranked list of the images from the original list (Flickr ranking) based only on this frequency matrix.
 In order to do that, we define a threshold $t$ and a function $F$ on a set of frequencies that determine when a document should be moved to the re-ranked list.
 Suppose the re-ranked list contains the documents $D_1, ..., D_i$ and we want to know if a document $D_k$ in the original list can be moved to the re-ranked list at position $i+1$. We compute the frequencies $f_1, ..., f_i$ between $D_k$ and each $D_1,...,D_i$ and if $F(f_1, ..., f_i) < t$, $D_k$ is moved to the re-ranked list, otherwise it is not. 
 After all the elements in the original list are processed, if there are still remaining documents not moved to the re-ranked list, the value of $t$ is increased and these documents are reprocessed. The algorithm continues until there are no documents left in the original list.
-The functions for $F$ used in this work were Max, Min and Mean, but other measures, such as mode, median or any percentile could be easily employed as well.
+The functions for $F$ used in this work were maximum, minimum and mean, but other measures, such as mode, median or any percentile could be easily employed as well.
 
 %We start the procedure moving one pivot document (in this work, the top ranked document in the original list) to the re-ranked list. 
 %Then, for each document $D_i$ from the original list, we count the number of times that $D_i$ occurred together with each element in the re-ranked list. 
@@ -271,7 +272,6 @@ Details are shown in Table~\ref{table:config} and the results are shown in Table
 Based on the development data, we were expecting Run3 and Run4 to be our best runs, but the results on the test data shows that we probably 
 overfitted the development set for the re-ranking and credibility part. The best result was that the cluster ensemble proved to be robust for this task.
 
-
 % Moved to introduction, so the tables can be placed in the second page
 %\input{table_conf}
 %\input{table_results}
@@ -280,14 +280,15 @@ overfitted the development set for the re-ranking and credibility part. The best
 
 Our experiments show that an ensemble of clusters can be a robust way to diversify results.
 Unfortunately our re-rank method did not work in the test set as well as it did in the development set.
-Last, the use of credibility also seem to have overfitted the development data, not being effective for the development set.
+Last, the use of credibility also seems to have overfitted the development data, not being effective for the test set.
 
 \end{section}
 
 \paragraph{\textbf{ACKNOWLEDGMENTS}}
-This research was funded by the Austrian Science Fund (FWF) project number I1094-N23 (MUCKE) \todo{What else? Admire}.
+%\begin{section}{ACKNOWLEDGMENTS}
+This research was funded by the Austrian Science Fund (FWF) project number I1094-N23 (MUCKE) and project number P25905-N23 (ADmIRE). 
+%\end{section}
 
 \bibliographystyle{abbrv}
 \bibliography{workingNotes}  
 \end{document}
-
