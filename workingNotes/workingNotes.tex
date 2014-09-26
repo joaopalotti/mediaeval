@@ -107,19 +107,17 @@ The goal of this step is to increase the percentage of relevant images.
 We studied two approaches: (1) a filtering step based on a simplified version of Jain et al.~\cite{wsp13} experiments, removing images without any view, geotagged more than 8 kilometers away from the point of interest (POI) and with a description length longer than 2000 characters; 
 %(2) apart of these three features, we also used the images' license, the part of the day (morning, afternoon, night) and the number of times the POI appeared 
 %in the title and descriptions of an image, and used a Logistic Regression classifier trained on the whole 2013 and 2014 development data.
-(2) we trainied a Logistic Regression classifier on the whole 2013 and 2014 development data, using as features the three features described and also the images' license, the part of the day (morning, afternoon, night) and the number of times the POI appeared in the title and descriptions of an image.
+(2) we trained a Logistic Regression classifier on the whole 2013 and 2014 data, using as features the ones described above and also the images' license, the time of the day (morning, afternoon, night) and the number of times the POI appeared in the title and descriptions of an image.  
 \end{subsection}
 
 
 \begin{subsection}{Re-ranking}
 
-For re-ordering the results, we used the title, tags and description of the photos. For text pre-processing, we de-compounded the terms using a greedy dictionary based approach. In the next step, we expand the query using the first sentence of Wikipedia which helped for place disambiguation. We tested four document similarity methods based on Solr\footnote{http://lucene.apache.org/solr/}, Random Indexing\footnote{https://code.google.com/p/semanticvectors/}, Galago\footnote{http://sourceforge.net/p/lemur/galago/} and Word2Vec\footnote{https://code.google.com/p/word2vec/}\cite{word2vec}. Among all, we found the best result using a semantic similarity approach based on Word2Vec.
+For re-ordering the results, we used the title, tags and description of the photos. For text pre-processing, we decomposed the terms using a greedy dictionary based approach. In the next step, we expand the query using the first sentence of Wikipedia which helped for place disambiguation. We tested four document similarity methods based on Solr\footnote{http://lucene.apache.org/solr/}, Random Indexing\footnote{https://code.google.com/p/semanticvectors/}, Galago\footnote{http://sourceforge.net/p/lemur/galago/} and Word2Vec\footnote{https://code.google.com/p/word2vec/}\cite{word2vec}. Among all, we found the best result using a semantic similarity approach based on Word2Vec.
 
 Word2Vec provides vector representation of words by using deep learning. We trained a model on Wikipedia and then used the vector representation of words to calculate the text similarity of the query to each photo.
 
-We extracted binary attributes based on Jain et al.~\cite{wsp13}, as we also did in the pre-filtering step, and together with the Word2Vec scores, we used a Linear Regression to re-rank the results based on the development data.
-
-
+Apart from the Word2Vec scores, we extracted binary attributes based on Jain et al.~\cite{wsp13}, as we did in the pre-filtering step, and we used a Linear Regression to re-rank the results based on the development data.
 %: (1) if the photo had any view, (2) if the distance between a photo and the POI is greater than 8 kilometers, and (3) if the description length has more than 2000 characters. All features were applied in a Linear Regression model in order to re-rank the list.
 
 \end{subsection}
