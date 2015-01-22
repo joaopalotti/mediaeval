@@ -2,6 +2,9 @@ Please, untar the tar.gz file and configure it using:
 
 tar -zxvf metis-5.1.0.tar.gz
 cd metis
+
+modify values in include/metis.h
+
 make config shared=1
 make
 sudo make install
@@ -11,6 +14,5 @@ After it, add to your .bashrc:
 export METIS_DLL="/usr/local/lib/libmetis.so"
 export METIS_REALTYPEWIDTH=64
 export METIS_IDXTYPEWIDTH=64
-
 
 

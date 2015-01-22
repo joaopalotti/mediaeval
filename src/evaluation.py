@@ -13,6 +13,7 @@ def evaluate(filename, collection, evalcsv, tocsv=[]):
     elif collection == "dev2014":
         cmd = "java -jar div_eval.jar -r " + filename + " -rgt ../devset/gt/rGT/ -dgt ../devset/gt/dGT/ -t ../devset/devset_topics.xml -o ."
 
+    print cmd
     #p = subprocess.Popen(cmd, shell=True, stdout=subprocess.PIPE, stderr=subprocess.STDOUT)
     p = subprocess.Popen(cmd, shell=True, stdout=subprocess.PIPE, stderr=subprocess.STDOUT)
     #,,.7515,.6924,.6742,.6606,.6282,.5967,.278,.4334,.6329,.7475,.8257,.8808,.3826,.5062,.6192,.6668,.6751,.6679
