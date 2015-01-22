@@ -1,0 +1,927 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<topics>
+<topic>
+	<number>262</number>
+	<title>Admiralty Arch London</title>
+	<latitude>51.506758</latitude>
+	<longitude>-0.128692</longitude>
+	<wiki>http://en.wikipedia.org/wiki/Admiralty_Arch</wiki>
+</topic>
+<topic>
+	<number>263</number>
+	<title>Allen County Courthouse Indiana Fort Wayne</title>
+	<latitude>41.079722</latitude>
+	<longitude>-85.139167</longitude>
+	<wiki>http://en.wikipedia.org/wiki/Allen_County_Courthouse_%2528Indiana%2529</wiki>
+</topic>
+<topic>
+	<number>264</number>
+	<title>Angel Falls Venezuela</title>
+	<latitude>5.9675</latitude>
+	<longitude>-62.535556</longitude>
+	<wiki>http://en.wikipedia.org/wiki/Angel_Falls</wiki>
+</topic>
+<topic>
+	<number>265</number>
+	<title>ANZAC War Memorial Sydney</title>
+	<latitude>-33.8757</latitude>
+	<longitude>151.211</longitude>
+	<wiki>http://en.wikipedia.org/wiki/ANZAC_War_Memorial</wiki>
+</topic>
+<topic>
+	<number>266</number>
+	<title>Armed Forces Memorial United Kingdom</title>
+	<latitude>52.7274</latitude>
+	<longitude>-1.727</longitude>
+	<wiki>http://en.wikipedia.org/wiki/Armed_Forces_Memorial</wiki>
+</topic>
+<topic>
+	<number>267</number>
+	<title>Baptistry of St. John  Pisa</title>
+	<latitude>43.723274</latitude>
+	<longitude>10.393968</longitude>
+	<wiki>http://en.wikipedia.org/wiki/Baptistry_%2528Pisa%2529</wiki>
+</topic>
+<topic>
+	<number>268</number>
+	<title>Basilica di Santa Croce Lecce</title>
+	<latitude>40.354663</latitude>
+	<longitude>18.172877</longitude>
+	<wiki>http://en.wikipedia.org/wiki/Basilica_di_Santa_Croce_%2528Lecce%2529</wiki>
+</topic>
+<topic>
+	<number>269</number>
+	<title>Basilica of Our Lady of the Pillar Zaragoza</title>
+	<latitude>41.656944</latitude>
+	<longitude>-0.878333</longitude>
+	<wiki>http://en.wikipedia.org/wiki/Basilica_of_Our_Lady_of_the_Pillar</wiki>
+</topic>
+<topic>
+	<number>270</number>
+	<title>Basilica of Saint Mary Major Rome</title>
+	<latitude>41.8975</latitude>
+	<longitude>12.498611</longitude>
+	<wiki>http://en.wikipedia.org/wiki/Basilica_of_Saint_Mary_Major</wiki>
+</topic>
+<topic>
+	<number>271</number>
+	<title>Basilica Santa Maria Alicante</title>
+	<latitude>41.54097</latitude>
+	<longitude>2.44652</longitude>
+	<wiki>http://en.wikipedia.org/wiki/Basilica_of_Santa_Maria,_Alicante</wiki>
+</topic>
+<topic>
+	<number>272</number>
+	<title>Blue Domed Church in Santorini</title>
+	<latitude>36.416667</latitude>
+	<longitude>25.433333</longitude>
+	<wiki>http://en.wikipedia.org/wiki/File:Blue-dome-Santorini.JPG</wiki>
+</topic>
+<topic>
+	<number>273</number>
+	<title>Bolivar Square Bogota Colombia</title>
+	<latitude>4.598056</latitude>
+	<longitude>-74.075833</longitude>
+	<wiki>http://en.wikipedia.org/wiki/Bol%25C3%25ADvar_Square</wiki>
+</topic>
+<topic>
+	<number>274</number>
+	<title>Booker T. Washington National Monument Virginia</title>
+	<latitude>37.123333</latitude>
+	<longitude>-79.765833</longitude>
+	<wiki>http://en.wikipedia.org/wiki/Booker_T._Washington_National_Monument</wiki>
+</topic>
+<topic>
+	<number>275</number>
+	<title>Boyana Church Sofia</title>
+	<latitude>42.644672</latitude>
+	<longitude>23.266172</longitude>
+	<wiki>http://en.wikipedia.org/wiki/Boyana_Church</wiki>
+</topic>
+<topic>
+	<number>276</number>
+	<title>Bran Castle in Transylvania</title>
+	<latitude>45.515</latitude>
+	<longitude>25.367222</longitude>
+	<wiki>http://en.wikipedia.org/wiki/Bran_Castle</wiki>
+</topic>
+<topic>
+	<number>277</number>
+	<title>Bridge of Remembrance Christchurch New Zealand</title>
+	<latitude>-43.5331</latitude>
+	<longitude>172.6334</longitude>
+	<wiki>http://en.wikipedia.org/wiki/Bridge_of_Remembrance</wiki>
+</topic>
+<topic>
+	<number>278</number>
+	<title>Buenos Aires Botanical Garden Palermo Argentina</title>
+	<latitude>-34.58247</latitude>
+	<longitude>-58.418598</longitude>
+	<wiki>http://en.wikipedia.org/wiki/Buenos_Aires_Botanical_Garden</wiki>
+</topic>
+<topic>
+	<number>279</number>
+	<title>Buonconsiglio Castle Trento Italy</title>
+	<latitude>46.0711</latitude>
+	<longitude>11.1269</longitude>
+	<wiki>http://en.wikipedia.org/wiki/Buonconsiglio_Castle</wiki>
+</topic>
+<topic>
+	<number>280</number>
+	<title>Buxton Memorial Fountain London</title>
+	<latitude>51.496111</latitude>
+	<longitude>-0.124792</longitude>
+	<wiki>http://en.wikipedia.org/wiki/Buxton_Memorial_Fountain</wiki>
+</topic>
+<topic>
+	<number>281</number>
+	<title>Calakmul Campeche Mexico</title>
+	<latitude>18.105392</latitude>
+	<longitude>-89.810829</longitude>
+	<wiki>http://en.wikipedia.org/wiki/Calakmul</wiki>
+</topic>
+<topic>
+	<number>282</number>
+	<title>Castello di Gradara</title>
+	<latitude>43.94361</latitude>
+	<longitude>12.773924</longitude>
+	<wiki>http://it.wikipedia.org/wiki/Castello_di_Gradara</wiki>
+</topic>
+<topic>
+	<number>283</number>
+	<title>Castillo San Felipe de Barajas Cartagena Colombia</title>
+	<latitude>10.42222</latitude>
+	<longitude>-75.53806</longitude>
+	<wiki>http://en.wikipedia.org/wiki/Castillo_San_Felipe_de_Barajas</wiki>
+</topic>
+<topic>
+	<number>284</number>
+	<title>Castle Estense Ferrara</title>
+	<latitude>44.837673</latitude>
+	<longitude>11.619329</longitude>
+	<wiki>http://en.wikipedia.org/wiki/Castello_Estense</wiki>
+</topic>
+<topic>
+	<number>285</number>
+	<title>Cathedral Basilica of St. Augustine Florida</title>
+	<latitude>29.892778</latitude>
+	<longitude>-81.312500</longitude>
+	<wiki>http://en.wikipedia.org/wiki/Cathedral_Basilica_of_St._Augustine</wiki>
+</topic>
+<topic>
+	<number>286</number>
+	<title>Chateau Gaillard France</title>
+	<latitude>49.238611</latitude>
+	<longitude>1.402222</longitude>
+	<wiki>http://en.wikipedia.org/wiki/Ch%25C3%25A2teau_Gaillard</wiki>
+</topic>
+<topic>
+	<number>287</number>
+	<title>Chavin de Huantar Peru</title>
+	<latitude>-9.592775</latitude>
+	<longitude>-77.178453</longitude>
+	<wiki>http://en.wikipedia.org/wiki/Chav%25C3%25ADn_de_Huantar</wiki>
+</topic>
+<topic>
+	<number>288</number>
+	<title>Chhatrapati Shivaji Terminus railway station Mumbai India</title>
+	<latitude>18.9398</latitude>
+	<longitude>72.8355</longitude>
+	<wiki>http://en.wikipedia.org/wiki/Chhatrapati_Shivaji_Terminus</wiki>
+</topic>
+<topic>
+	<number>289</number>
+	<title>Christ Church Cathedral Missouri</title>
+	<latitude>38.630278</latitude>
+	<longitude>-90.198611</longitude>
+	<wiki>http://en.wikipedia.org/wiki/Christ_Church_Cathedral_%2528St._Louis,_Missouri%2529</wiki>
+</topic>
+<topic>
+	<number>290</number>
+	<title>Connecticut State Capitol Hartford</title>
+	<latitude>41.764136</latitude>
+	<longitude>-72.682778</longitude>
+	<wiki>http://en.wikipedia.org/wiki/Connecticut_State_Capitol</wiki>
+</topic>
+<topic>
+	<number>291</number>
+	<title>Convent of Christ in Tomar</title>
+	<latitude>39.603889</latitude>
+	<longitude>-8.419167</longitude>
+	<wiki>http://en.wikipedia.org/wiki/Convent_of_Christ_%2528Tomar%2529</wiki>
+</topic>
+<topic>
+	<number>292</number>
+	<title>Coronation Stone England</title>
+	<latitude>51.408056</latitude>
+	<longitude>-0.306111</longitude>
+	<wiki>http://en.wikipedia.org/wiki/Coronation_Stone</wiki>
+</topic>
+<topic>
+	<number>293</number>
+	<title>Cristo Rey Mexico</title>
+	<latitude>21.012</latitude>
+	<longitude>-101.369</longitude>
+	<wiki>http://en.wikipedia.org/wiki/Cristo_Rey_(statue,_Mexico)</wiki>
+</topic>
+<topic>
+	<number>294</number>
+	<title>Cueva de las Manos Santa Cruz Argentina</title>
+	<latitude>-47.155278</latitude>
+	<longitude>-70.655278</longitude>
+	<wiki>http://en.wikipedia.org/wiki/Cueva_de_las_Manos</wiki>
+</topic>
+<topic>
+	<number>295</number>
+	<title>Dazu Rock Carvings China</title>
+	<latitude>29.382773</latitude>
+	<longitude>105.472527</longitude>
+	<wiki>http://en.wikipedia.org/wiki/Dazu_Rock_Carvings</wiki>
+</topic>
+<topic>
+	<number>296</number>
+	<title>Duke of York Column London</title>
+	<latitude>51.506333</latitude>
+	<longitude>-0.131806</longitude>
+	<wiki>http://en.wikipedia.org/wiki/Duke_of_York_Column</wiki>
+</topic>
+<topic>
+	<number>297</number>
+	<title>Egg Castle Naples</title>
+	<latitude>40.82722</latitude>
+	<longitude>14.248611</longitude>
+	<wiki>http://en.wikipedia.org/wiki/Egg_Castle</wiki>
+</topic>
+<topic>
+	<number>299</number>
+	<title>Faisal Mosque Pakistan</title>
+	<latitude>33.729944</latitude>
+	<longitude>73.038436</longitude>
+	<wiki>http://en.wikipedia.org/wiki/Faisal_Mosque</wiki>
+</topic>
+<topic>
+	<number>300</number>
+	<title>Fisher Building of Detroit Michigan</title>
+	<latitude>42.369306</latitude>
+	<longitude>-83.076944</longitude>
+	<wiki>http://en.wikipedia.org/wiki/Fisher_Building</wiki>
+</topic>
+<topic>
+	<number>301</number>
+	<title>Fontaine de l'Observatoire Paris</title>
+	<latitude>48.841056</latitude>
+	<longitude>2.336806</longitude>
+	<wiki>http://en.wikipedia.org/wiki/Fontaine_de_l%2527Observatoire</wiki>
+</topic>
+<topic>
+	<number>302</number>
+	<title>Fontaine du Palmier Paris</title>
+	<latitude>48.857497</latitude>
+	<longitude>2.347269</longitude>
+	<wiki>http://en.wikipedia.org/wiki/Fontaine_du_Palmier</wiki>
+</topic>
+<topic>
+	<number>303</number>
+	<title>Fort Matanzas St. Augustine Florida</title>
+	<latitude>29.715278</latitude>
+	<longitude>-81.239167</longitude>
+	<wiki>http://en.wikipedia.org/wiki/Fort_Matanzas_National_Monument</wiki>
+</topic>
+<topic>
+	<number>304</number>
+	<title>Fountain of Neptune Bologna</title>
+	<latitude>44.494444</latitude>
+	<longitude>11.3425</longitude>
+	<wiki>http://en.wikipedia.org/wiki/Fountain_of_Neptune,_Bologna</wiki>
+</topic>
+<topic>
+	<number>306</number>
+	<title>Fuerte Bulnes Punta Arenas Chile</title>
+	<latitude>-53.63</latitude>
+	<longitude>-70.918333</longitude>
+	<wiki>http://en.wikipedia.org/wiki/Fuerte_Bulnes</wiki>
+</topic>
+<topic>
+	<number>307</number>
+	<title>Fujian Tulou Fujian China</title>
+	<latitude>25.023056</latitude>
+	<longitude>117.685833</longitude>
+	<wiki>http://en.wikipedia.org/wiki/Fujian_Tulou</wiki>
+</topic>
+<topic>
+	<number>308</number>
+	<title>Gate of Supreme Harmony Forbidden City China</title>
+	<latitude>39.913972</latitude>
+	<longitude>116.39075</longitude>
+	<wiki>http://en.wikipedia.org/wiki/Gate_of_Supreme_Harmony</wiki>
+</topic>
+<topic>
+	<number>309</number>
+	<title>Golden Temple of Amritsar India</title>
+	<latitude>31.62</latitude>
+	<longitude>74.876944</longitude>
+	<wiki>http://en.wikipedia.org/wiki/Harmandir_Sahib</wiki>
+</topic>
+<topic>
+	<number>310</number>
+	<title>Grand Portage Minnesota</title>
+	<latitude>47.996389</latitude>
+	<longitude>-89.734167</longitude>
+	<wiki>http://en.wikipedia.org/wiki/Grand_Portage_National_Monument</wiki>
+</topic>
+<topic>
+	<number>311</number>
+	<title>Great Living Chola Temples India</title>
+	<latitude>10.783056</latitude>
+	<longitude>79.1325</longitude>
+	<wiki>http://en.wikipedia.org/wiki/Great_Living_Chola_Temples</wiki>
+</topic>
+<topic>
+	<number>312</number>
+	<title>Hemis Monastery Hemis Ladakh India</title>
+	<latitude>33.912475</latitude>
+	<longitude>77.702833</longitude>
+	<wiki>http://en.wikipedia.org/wiki/Hemis_Monastery</wiki>
+</topic>
+<topic>
+	<number>313</number>
+	<title>Hermitage Museum in Saint Petersburg</title>
+	<latitude>59.941</latitude>
+	<longitude>30.3129</longitude>
+	<wiki>http://en.wikipedia.org/wiki/Hermitage_Museum</wiki>
+</topic>
+<topic>
+	<number>314</number>
+	<title>Horta Museum Brussels</title>
+	<latitude>50.824167</latitude>
+	<longitude>4.354722</longitude>
+	<wiki>http://en.wikipedia.org/wiki/Maison_Horta</wiki>
+</topic>
+<topic>
+	<number>315</number>
+	<title>Hospicio Cabanas Jalisco Mexico</title>
+	<latitude>20.676872</latitude>
+	<longitude>-103.337864</longitude>
+	<wiki>http://en.wikipedia.org/wiki/Hospicio_Cabanas</wiki>
+</topic>
+<topic>
+	<number>316</number>
+	<title>Iglesia de la Matriz Valparaiso Chile</title>
+	<latitude>-33.0363</latitude>
+	<longitude>-71.6322</longitude>
+	<wiki>http://en.wikipedia.org/wiki/Iglesia_de_la_Matriz</wiki>
+</topic>
+<topic>
+	<number>317</number>
+	<title>Iowa Old Capitol Building</title>
+	<latitude>41.661344</latitude>
+	<longitude>-91.535647</longitude>
+	<wiki>http://en.wikipedia.org/wiki/Iowa_Old_Capitol_Building</wiki>
+</topic>
+<topic>
+	<number>318</number>
+	<title>Jantar Mantar India</title>
+	<latitude>26.926317</latitude>
+	<longitude>75.824504</longitude>
+	<wiki>http://en.wikipedia.org/wiki/Jantar_Mantar,_Jaipur</wiki>
+</topic>
+<topic>
+	<number>319</number>
+	<title>John A. Roebling Suspension Bridge</title>
+	<latitude>39.092231</latitude>
+	<longitude>-84.509569</longitude>
+	<wiki>http://en.wikipedia.org/wiki/John_A._Roebling_Suspension_Bridge</wiki>
+</topic>
+<topic>
+	<number>320</number>
+	<title>July Column Paris</title>
+	<latitude>48.853056</latitude>
+	<longitude>2.369167</longitude>
+	<wiki>http://en.wikipedia.org/wiki/July_Column</wiki>
+</topic>
+<topic>
+	<number>321</number>
+	<title>Kaiserstein</title>
+	<latitude>47.77666</latitude>
+	<longitude>15.81558</longitude>
+	<wiki>http://commons.wikimedia.org/wiki/File:Panoramic_View_from_the_Kaiserstein.JPG</wiki>
+</topic>
+<topic>
+	<number>322</number>
+	<title>Konark Sun Temple India</title>
+	<latitude>19.887444</latitude>
+	<longitude>86.094596</longitude>
+	<wiki>http://en.wikipedia.org/wiki/Konark_Sun_Temple</wiki>
+</topic>
+<topic>
+	<number>323</number>
+	<title>La Santisima Trinidad de Parana Paraguay</title>
+	<latitude>-27.133</latitude>
+	<longitude>-55.7</longitude>
+	<wiki>http://en.wikipedia.org/wiki/La_Sant%25C3%25ADsima_Trinidad_de_Paran%C3%A1</wiki>
+</topic>
+<topic>
+	<number>324</number>
+	<title>Lake Titicaca Peru</title>
+	<latitude>-15.75</latitude>
+	<longitude>-69.416667</longitude>
+	<wiki>http://en.wikipedia.org/wiki/Lake_Titicaca</wiki>
+</topic>
+<topic>
+	<number>325</number>
+	<title>Lecce Cathedral Italy</title>
+	<latitude>40.35</latitude>
+	<longitude>18.166667</longitude>
+	<wiki>http://fr.wikipedia.org/wiki/D%25C3%25B4me_de_Lecce</wiki>
+</topic>
+<topic>
+	<number>326</number>
+	<title>Les Subsistances Lyon</title>
+	<latitude>45.768056</latitude>
+	<longitude>4.816944</longitude>
+	<wiki>http://en.wikipedia.org/wiki/Les_Subsistances</wiki>
+</topic>
+<topic>
+	<number>327</number>
+	<title>Leshan Giant Buddha China</title>
+	<latitude>29.547222</latitude>
+	<longitude>103.769167</longitude>
+	<wiki>http://en.wikipedia.org/wiki/Leshan_Giant_Buddha</wiki>
+</topic>
+<topic>
+	<number>328</number>
+	<title>Lighthouse of Genoa</title>
+	<latitude>44.404567</latitude>
+	<longitude>8.904722</longitude>
+	<wiki>http://en.wikipedia.org/wiki/Lighthouse_of_Genoa</wiki>
+</topic>
+<topic>
+	<number>329</number>
+	<title>Lion of Belfort</title>
+	<latitude>47.636667</latitude>
+	<longitude>6.864722</longitude>
+	<wiki>http://en.wikipedia.org/wiki/Lion_of_Belfort</wiki>
+</topic>
+<topic>
+	<number>330</number>
+	<title>Little Ben London</title>
+	<latitude>51.49646</latitude>
+	<longitude>-0.14265</longitude>
+	<wiki>http://en.wikipedia.org/wiki/Little_Ben</wiki>
+</topic>
+<topic>
+	<number>331</number>
+	<title>Longwood Mississippi</title>
+	<latitude>31.536667</latitude>
+	<longitude>-91.404722</longitude>
+	<wiki>http://en.wikipedia.org/wiki/Longwood_%2528Natchez,_Mississippi%2529</wiki>
+</topic>
+<topic>
+	<number>332</number>
+	<title>Lotus Temple in New Delhi</title>
+	<latitude>28.553325</latitude>
+	<longitude>77.2586</longitude>
+	<wiki>http://en.wikipedia.org/wiki/Lotus_Temple</wiki>
+</topic>
+<topic>
+	<number>333</number>
+	<title>Louisville Water Tower Louisville</title>
+	<latitude>38.280524</latitude>
+	<longitude>-85.701208</longitude>
+	<wiki>http://en.wikipedia.org/wiki/Louisville_Water_Tower</wiki>
+</topic>
+<topic>
+	<number>334</number>
+	<title>Lowell Observatory Arizona</title>
+	<latitude>35.303778</latitude>
+	<longitude>-111.664444</longitude>
+	<wiki>http://en.wikipedia.org/wiki/Lowell_Observatory</wiki>
+</topic>
+<topic>
+	<number>335</number>
+	<title>Madrid City Hall</title>
+	<latitude>43.26416</latitude>
+	<longitude>-2.9235</longitude>
+	<wiki>http://commons.wikimedia.org/wiki/File:Madrid_Plaza_Cibeles_City_Hall.JPG</wiki>
+</topic>
+<topic>
+	<number>336</number>
+	<title>Mausoleum of the First Qin Emperor China</title>
+	<latitude>34.381667</latitude>
+	<longitude>109.253889</longitude>
+	<wiki>http://en.wikipedia.org/wiki/Mausoleum_of_the_First_Qin_Emperor</wiki>
+</topic>
+<topic>
+	<number>337</number>
+	<title>Memorial to Heroic Self Sacrifice London</title>
+	<latitude>51.51682</latitude>
+	<longitude>-0.09787</longitude>
+	<wiki>http://en.wikipedia.org/wiki/Postman%2527s_Park</wiki>
+</topic>
+<topic>
+	<number>338</number>
+	<title>Ming Dynasty Tombs Beijing China</title>
+	<latitude>40.253333</latitude>
+	<longitude>116.2175</longitude>
+	<wiki>http://en.wikipedia.org/wiki/Ming_Dynasty_Tombs</wiki>
+</topic>
+<topic>
+	<number>339</number>
+	<title>Monastery of Alcobaca</title>
+	<latitude>39.548333</latitude>
+	<longitude>-8.98</longitude>
+	<wiki>http://en.wikipedia.org/wiki/Monastery_of_Alcoba%25C3%25A7a</wiki>
+</topic>
+<topic>
+	<number>340</number>
+	<title>Monastery of the Hieronymites Lisbon</title>
+	<latitude>38.697667</latitude>
+	<longitude>-9.206</longitude>
+	<wiki>http://en.wikipedia.org/wiki/Jer%25C3%25B3nimos_Monastery</wiki>
+</topic>
+<topic>
+	<number>341</number>
+	<title>Monument to Alfonso XII Madrid</title>
+	<latitude>40.417222</latitude>
+	<longitude>-3.683056</longitude>
+	<wiki>http://en.wikipedia.org/wiki/Monument_to_Alfonso_XII</wiki>
+</topic>
+<topic>
+	<number>342</number>
+	<title>Monumento San Martin Buenos Aires</title>
+	<latitude>-33.26667</latitude>
+	<longitude>-66.31667</longitude>
+	<wiki>http://es.wikipedia.org/wiki/Monumento_al_General_San_Mart%25C3%25ADn_y_a_los_Ej%25C3%25A9rcitos_de_la_Independencia</wiki>
+</topic>
+<topic>
+	<number>343</number>
+	<title>Mother Temple of Besakih Bali</title>
+	<latitude>-8.3764</latitude>
+	<longitude>115.517</longitude>
+	<wiki>http://en.wikipedia.org/wiki/Mother_Temple_of_Besakih</wiki>
+</topic>
+<topic>
+	<number>344</number>
+	<title>New Zealand Tomb of the Unknown Warrior Wellington</title>
+	<latitude>-41.298828</latitude>
+	<longitude>174.777219</longitude>
+	<wiki>http://en.wikipedia.org/wiki/New_Zealand_Tomb_of_the_Unknown_Warrior</wiki>
+</topic>
+<topic>
+	<number>345</number>
+	<title>New Zealand War Memorial London</title>
+	<latitude>51.5031</latitude>
+	<longitude>-0.1504</longitude>
+	<wiki>http://en.wikipedia.org/wiki/New_Zealand_War_Memorial</wiki>
+</topic>
+<topic>
+	<number>346</number>
+	<title>North Christian Church Columbus</title>
+	<latitude>39.229444</latitude>
+	<longitude>-85.914722</longitude>
+	<wiki>http://en.wikipedia.org/wiki/North_Christian_Church</wiki>
+</topic>
+<topic>
+	<number>347</number>
+	<title>Obelisk of Sao Paulo Sao Paulo Brazil</title>
+	<latitude>-23.584725</latitude>
+	<longitude>-46.65475</longitude>
+	<wiki>http://en.wikipedia.org/wiki/Obelisk_of_Sao_Paulo</wiki>
+</topic>
+<topic>
+	<number>348</number>
+	<title>Old State House Connecticut</title>
+	<latitude>41.766111</latitude>
+	<longitude>-72.672778</longitude>
+	<wiki>http://en.wikipedia.org/wiki/Old_State_House_%2528Hartford%2529</wiki>
+</topic>
+<topic>
+	<number>349</number>
+	<title>Palace of the Parliament Bucharest</title>
+	<latitude>44.4275</latitude>
+	<longitude>26.0875</longitude>
+	<wiki>http://en.wikipedia.org/wiki/Palace_of_the_Parliament_of_Romania</wiki>
+</topic>
+<topic>
+	<number>350</number>
+	<title>Palacio da Alvorada Brazil</title>
+	<latitude>-15.792772</latitude>
+	<longitude>-47.822175</longitude>
+	<wiki>http://en.wikipedia.org/wiki/Pal%C3%A1cio_da_Alvorada</wiki>
+</topic>
+<topic>
+	<number>351</number>
+	<title>Palais Brongniart Paris</title>
+	<latitude>48.86912</latitude>
+	<longitude>2.34133</longitude>
+	<wiki>http://en.wikipedia.org/wiki/Palais_Brongniart</wiki>
+</topic>
+<topic>
+	<number>352</number>
+	<title>Palazzo delle Albere Trento</title>
+	<latitude>46.063169</latitude>
+	<longitude>11.113663</longitude>
+	<wiki>http://en.wikipedia.org/wiki/Palazzo_delle_Albere</wiki>
+</topic>
+<topic>
+	<number>353</number>
+	<title>Pendinas Wales</title>
+	<latitude>52.40156</latitude>
+	<longitude>-4.08248</longitude>
+	<wiki>http://en.wikipedia.org/wiki/Pendinas</wiki>
+</topic>
+<topic>
+	<number>354</number>
+	<title>Pergamon Museum Berlin</title>
+	<latitude>52.521</latitude>
+	<longitude>52.521</longitude>
+	<wiki>http://en.wikipedia.org/wiki/Pergamon_Museum</wiki>
+</topic>
+<topic>
+	<number>355</number>
+	<title>Piazza dei Miracoli Pisa Italy</title>
+	<latitude>43.723333</latitude>
+	<longitude>10.395278</longitude>
+	<wiki>http://en.wikipedia.org/wiki/Piazza_dei_Miracoli</wiki>
+</topic>
+<topic>
+	<number>356</number>
+	<title>Piazza della Liberta Florence</title>
+	<latitude>43.783889</latitude>
+	<longitude>11.261944</longitude>
+	<wiki>http://en.wikipedia.org/wiki/Piazza_della_Libert%25C3%25A0</wiki>
+</topic>
+<topic>
+	<number>357</number>
+	<title>Piazza Mazzini Lecce</title>
+	<latitude>40.353214</latitude>
+	<longitude>18.179123</longitude>
+	<wiki>http://www.nelsalento.com/guida/id/60/lecce/piazza-mazzini.aspx</wiki>
+</topic>
+<topic>
+	<number>358</number>
+	<title>Pilgrimage Church of Wies Germany</title>
+	<latitude>47.683333</latitude>
+	<longitude>10.9</longitude>
+	<wiki>http://en.wikipedia.org/wiki/Wies_Church</wiki>
+</topic>
+<topic>
+	<number>359</number>
+	<title>Place de la Nation Paris</title>
+	<latitude>48.848333</latitude>
+	<longitude>2.395833</longitude>
+	<wiki>http://en.wikipedia.org/wiki/Place_de_la_Nation</wiki>
+</topic>
+<topic>
+	<number>360</number>
+	<title>Place des Victoires Paris</title>
+	<latitude>48.865833</latitude>
+	<longitude>2.341111</longitude>
+	<wiki>http://en.wikipedia.org/wiki/Place_des_Victoires</wiki>
+</topic>
+<topic>
+	<number>361</number>
+	<title>Ponce de Leon Inlet Light Florida</title>
+	<latitude>29.080617</latitude>
+	<longitude>-80.928017</longitude>
+	<wiki>http://en.wikipedia.org/wiki/Ponce_de_Leon_Inlet_Light</wiki>
+</topic>
+<topic>
+	<number>362</number>
+	<title>Pont de Normandie France</title>
+	<latitude>49.435833</latitude>
+	<longitude>0.274444</longitude>
+	<wiki>http://en.wikipedia.org/wiki/Pont_de_Normandie</wiki>
+</topic>
+<topic>
+	<number>363</number>
+	<title>Porta Sempione Milan</title>
+	<latitude>45.475833</latitude>
+	<longitude>9.1725</longitude>
+	<wiki>http://en.wikipedia.org/wiki/Porta_Sempione</wiki>
+</topic>
+<topic>
+	<number>364</number>
+	<title>Porte Saint-Denis Paris</title>
+	<latitude>48.869722</latitude>
+	<longitude>2.352636</longitude>
+	<wiki>http://en.wikipedia.org/wiki/Porte_Saint-Denis</wiki>
+</topic>
+<topic>
+	<number>365</number>
+	<title>Porte Saint-Martin Paris</title>
+	<latitude>48.869139</latitude>
+	<longitude>2.355625</longitude>
+	<wiki>http://en.wikipedia.org/wiki/Porte_Saint-Martin</wiki>
+</topic>
+<topic>
+	<number>366</number>
+	<title>Portland Observatory Portland</title>
+	<latitude>43.665278</latitude>
+	<longitude>-70.248333</longitude>
+	<wiki>http://en.wikipedia.org/wiki/Portland_Observatory</wiki>
+</topic>
+<topic>
+	<number>368</number>
+	<title>Puerta de San Esteban</title>
+	<latitude>40.03064</latitude>
+	<longitude>-6.09247</longitude>
+	<wiki>http://commons.wikimedia.org/wiki/Category:Puerta_de_San_Esteban</wiki>
+</topic>
+<topic>
+	<number>369</number>
+	<title>Puerta de Toledo Madrid</title>
+	<latitude>40.406721</latitude>
+	<longitude>-3.711636</longitude>
+	<wiki>http://en.wikipedia.org/wiki/Gate_of_Toledo</wiki>
+</topic>
+<topic>
+	<number>370</number>
+	<title>Puerta de Trujillo</title>
+	<latitude>40.02729</latitude>
+	<longitude>-6.09286</longitude>
+	<wiki>http://commons.wikimedia.org/wiki/File:Plasencia_puerta_de_Trujillo.JPG</wiki>
+</topic>
+<topic>
+	<number>371</number>
+	<title>Pukara de Quitor Chile</title>
+	<latitude>-22.890833</latitude>
+	<longitude>-68.214444</longitude>
+	<wiki>http://en.wikipedia.org/wiki/Pukar%C3%A1_de_Quitor</wiki>
+</topic>
+<topic>
+	<number>372</number>
+	<title>Rainbow Bridge Utah</title>
+	<latitude>37.077222</latitude>
+	<longitude>-110.964167</longitude>
+	<wiki>http://en.wikipedia.org/wiki/Rainbow_Bridge_National_Monument</wiki>
+</topic>
+<topic>
+	<number>373</number>
+	<title>Rani ki vav Gujarat India</title>
+	<latitude>23.85892</latitude>
+	<longitude>72.10162</longitude>
+	<wiki>http://en.wikipedia.org/wiki/Rani_ki_vav</wiki>
+</topic>
+<topic>
+	<number>374</number>
+	<title>Reliance Building Chicago</title>
+	<latitude>41.882778</latitude>
+	<longitude>-87.627778</longitude>
+	<wiki>http://en.wikipedia.org/wiki/Reliance_Building</wiki>
+</topic>
+<topic>
+	<number>375</number>
+	<title>Richard Coeur de Lion London</title>
+	<latitude>51.499157</latitude>
+	<longitude>-0.125584</longitude>
+	<wiki>http://en.wikipedia.org/wiki/Richard_Coeur_de_Lion_%2528statue%2529</wiki>
+</topic>
+<topic>
+	<number>376</number>
+	<title>Roman amphitheater Lecce</title>
+	<latitude>40.352488</latitude>
+	<longitude>18.172621</longitude>
+	<wiki>http://it.wikipedia.org/wiki/Anfiteatro_romano_di_Lecce</wiki>
+</topic>
+<topic>
+	<number>377</number>
+	<title>Roman arch Spain</title>
+	<latitude>41.17083</latitude>
+	<longitude>-2.4325</longitude>
+	<wiki>http://en.wikipedia.org/wiki/Roman_arch_%2528Medinaceli%2529</wiki>
+</topic>
+<topic>
+	<number>378</number>
+	<title>Royal Palace of Turin</title>
+	<latitude>45.072914</latitude>
+	<longitude>7.6862025</longitude>
+	<wiki>http://en.wikipedia.org/wiki/Royal_Palace_of_Turin</wiki>
+</topic>
+<topic>
+	<number>379</number>
+	<title>Salt Cathedral of Zipaquira Cundinamarca Colombia</title>
+	<latitude>5.01876</latitude>
+	<longitude>-74.0093</longitude>
+	<wiki>http://en.wikipedia.org/wiki/Salt_Cathedral_of_Zipaquir%C3%A1</wiki>
+</topic>
+<topic>
+	<number>380</number>
+	<title>San Petronio Basilica Bologna</title>
+	<latitude>44.492778</latitude>
+	<longitude>11.343611</longitude>
+	<wiki>http://en.wikipedia.org/wiki/San_Petronio_Basilica</wiki>
+</topic>
+<topic>
+	<number>381</number>
+	<title>Sant'Agostino Rome</title>
+	<latitude>41.900833</latitude>
+	<longitude>12.474167</longitude>
+	<wiki>http://en.wikipedia.org/wiki/Basilica_of_Sant%2527Agostino</wiki>
+</topic>
+<topic>
+	<number>382</number>
+	<title>Silas Deane House Connecticut</title>
+	<latitude>41.694969</latitude>
+	<longitude>-72.653614</longitude>
+	<wiki>http://en.wikipedia.org/wiki/Silas_Deane_House</wiki>
+</topic>
+<topic>
+	<number>383</number>
+	<title>Sowjetisches Ehrenmal</title>
+	<latitude>52.486111</latitude>
+	<longitude>13.471667</longitude>
+	<wiki>http://en.wikipedia.org/wiki/Soviet_War_Memorial_%2528Treptower_Park%2529</wiki>
+</topic>
+<topic>
+	<number>384</number>
+	<title>St. Dominic Church Macau China</title>
+	<latitude>22.194722</latitude>
+	<longitude>113.540556</longitude>
+	<wiki>http://en.wikipedia.org/wiki/St._Dominic%2527s_Church,_Macau</wiki>
+</topic>
+<topic>
+	<number>385</number>
+	<title>St. Louis of the French Rome</title>
+	<latitude>41.899583</latitude>
+	<longitude>12.474667</longitude>
+	<wiki>http://en.wikipedia.org/wiki/San_Luigi_dei_Francesi</wiki>
+</topic>
+<topic>
+	<number>386</number>
+	<title>Standing Stones of Stenness Scotland</title>
+	<latitude>58.99398</latitude>
+	<longitude>-3.20775</longitude>
+	<wiki>http://en.wikipedia.org/wiki/Standing_Stones_of_Stenness</wiki>
+</topic>
+<topic>
+	<number>387</number>
+	<title>Statue of Winston Churchill London</title>
+	<latitude>51.50085</latitude>
+	<longitude>-0.12646</longitude>
+	<wiki>http://en.wikipedia.org/wiki/Statue_of_Winston_Churchill,_Parliament_Square</wiki>
+</topic>
+<topic>
+	<number>388</number>
+	<title>Stoclet Palace Brussels</title>
+	<latitude>50.835278</latitude>
+	<longitude>4.416111</longitude>
+	<wiki>http://en.wikipedia.org/wiki/Stoclet_House</wiki>
+</topic>
+<topic>
+	<number>389</number>
+	<title>The Golden Rider</title>
+	<latitude>51.05811</latitude>
+	<longitude>13.74133</longitude>
+	<wiki></wiki>
+</topic>
+<topic>
+	<number>390</number>
+	<title>The Great Buddha of Kamakura Japan</title>
+	<latitude>35.31684</latitude>
+	<longitude>139.53573</longitude>
+	<wiki>http://en.wikipedia.org/wiki/K%25C5%258Dtoku-in</wiki>
+</topic>
+<topic>
+	<number>391</number>
+	<title>The Great Sphinx at Giza Egypt</title>
+	<latitude>29.975278</latitude>
+	<longitude>31.137778</longitude>
+	<wiki>http://en.wikipedia.org/wiki/Great_Sphinx_of_Giza</wiki>
+</topic>
+<topic>
+	<number>392</number>
+	<title>The Great Wall of China</title>
+	<latitude>40.67693</latitude>
+	<longitude>117.23193</longitude>
+	<wiki>http://en.wikipedia.org/wiki/Great_Wall_of_China</wiki>
+</topic>
+<topic>
+	<number>393</number>
+	<title>The Valle de los Caidos</title>
+	<latitude>39.46836</latitude>
+	<longitude>-6.37928</longitude>
+	<wiki>http://en.wikipedia.org/wiki/Valle_de_los_Ca%25C3%25ADdos</wiki>
+</topic>
+<topic>
+	<number>394</number>
+	<title>Town Hall of Bremen</title>
+	<latitude>53.0759</latitude>
+	<longitude>8.8076</longitude>
+	<wiki>http://en.wikipedia.org/wiki/Town_Hall_of_Bremen</wiki>
+</topic>
+<topic>
+	<number>395</number>
+	<title>Turin Cathedral</title>
+	<latitude>45.07332</latitude>
+	<longitude>7.685435</longitude>
+	<wiki>http://en.wikipedia.org/wiki/Turin_Cathedral</wiki>
+</topic>
+<topic>
+	<number>396</number>
+	<title>Wainwright Building Missouri</title>
+	<latitude>38.626944</latitude>
+	<longitude>-90.192222</longitude>
+	<wiki>http://en.wikipedia.org/wiki/Wainwright_Building</wiki>
+</topic>
+</topics>

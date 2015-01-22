@@ -1,0 +1,7 @@
+1,narrow frontal view
+2,large distant frontal view
+3,far view
+4,architectural details
+5,creative views
+6,large side view
+7,back view 

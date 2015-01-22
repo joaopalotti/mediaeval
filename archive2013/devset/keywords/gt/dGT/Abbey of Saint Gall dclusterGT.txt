@@ -1,0 +1,17 @@
+1,outside statue
+2,inside views
+3,partial frontal view
+4,archway
+5,top of the outside statue
+6,wood sculptures
+7,sculpted little angel
+8,artefacts
+9,sculptures
+10,top of the frontal tower
+11,frontal view
+12,close up
+13,inside architecture
+14,paintings
+15,side view
+16,interior courtyard
+17,winter

@@ -1,0 +1,14 @@
+1,creative views
+2,large frontal view
+3,inside views
+4,partial side view
+5,large back view
+6,architectural details
+7,objects
+8,arched roof
+9,black entrance
+10,large back yard view
+11,distant view
+12,towers top
+13,inside archway 
+14,outside archway

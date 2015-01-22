@@ -1,0 +1,6 @@
+1,fort's fence
+2,distant view
+3,inside view winter
+4,fort's entrance
+5,details
+6,entrance plate

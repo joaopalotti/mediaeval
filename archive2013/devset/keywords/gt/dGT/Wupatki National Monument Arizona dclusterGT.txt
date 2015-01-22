@@ -1,0 +1,11 @@
+1,circle formation
+2,entrance monument sign
+3,information plates
+4,brick walls ruins close
+5,field view
+6,whole view
+7,creative view
+8,hill view
+9,partial view of the ruins
+10,surrounded by ruins
+11,rocks

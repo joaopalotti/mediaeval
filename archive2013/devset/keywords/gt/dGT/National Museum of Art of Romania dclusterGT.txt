@@ -1,0 +1,11 @@
+1,large frontal view
+2,Crucifixion at the Outskirts of the Village
+3,interior stairs
+4,statues
+5,painting close-ups
+6,large main entrance view
+7,black and white
+8,exposed paintings 
+9,1989 Revolution monument
+10,entrance views
+11,narrow frontal view

@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<topics>
+<topic>
+	<number>26</number>
+	<title>Abbey of Saint Gall</title>
+	<latitude>47.423056</latitude>
+	<longitude>9.377222</longitude>
+	<wiki>http://en.wikipedia.org/wiki/Abbey_of_Saint_Gall</wiki>
+</topic>
+<topic>
+	<number>27</number>
+	<title>Basilica of Saint Peter Vatican</title>
+	<latitude>41.902222</latitude>
+	<longitude>12.453333</longitude>
+	<wiki>http://en.wikipedia.org/wiki/Basilica_of_Saint_Peter</wiki>
+</topic>
+<topic>
+	<number>28</number>
+	<title>Basilica of St Mary of Health Venice</title>
+	<latitude>45.430833</latitude>
+	<longitude>12.334444</longitude>
+	<wiki>http://en.wikipedia.org/wiki/Santa_Maria_della_Salute</wiki>
+</topic>
+<topic>
+	<number>29</number>
+	<title>Campo Santo Pisa</title>
+	<latitude>43.723</latitude>
+	<longitude>10.395</longitude>
+	<wiki>http://en.wikipedia.org/wiki/Camposanto_Monumentale</wiki>
+</topic>
+<topic>
+	<number>30</number>
+	<title>Canadian National Vimy Memorial France</title>
+	<latitude>50.37944</latitude>
+	<longitude>2.77361</longitude>
+	<wiki>http://en.wikipedia.org/wiki/Canadian_National_Vimy_Memorial</wiki>
+</topic>
+<topic>
+	<number>31</number>
+	<title>Casas Grandes Chihuahua Mexico</title>
+	<latitude>30.366297</latitude>
+	<longitude>-107.947428</longitude>
+	<wiki>http://en.wikipedia.org/wiki/Casas_Grandes</wiki>
+</topic>
+<topic>
+	<number>32</number>
+	<title>El Infiernito Boyaca Colombia</title>
+	<latitude>5.647397</latitude>
+	<longitude>-73.558725</longitude>
+	<wiki>http://en.wikipedia.org/wiki/El_Infiernito</wiki>
+</topic>
+<topic>
+	<number>33</number>
+	<title>Fort Stanwix New York</title>
+	<latitude>43.210556</latitude>
+	<longitude>-75.455250</longitude>
+	<wiki>http://en.wikipedia.org/wiki/Fort_Stanwix</wiki>
+</topic>
+<topic>
+	<number>34</number>
+	<title>George Washington Birthplace Virginia</title>
+	<latitude>38.186111</latitude>
+	<longitude>-76.930556</longitude>
+	<wiki>http://en.wikipedia.org/wiki/George_Washington_Birthplace_National_Monument</wiki>
+</topic>
+<topic>
+	<number>35</number>
+	<title>Hosios Loukas Monastery Greece</title>
+	<latitude>38.394722</latitude>
+	<longitude>22.746667</longitude>
+	<wiki>http://en.wikipedia.org/wiki/Hosios_Loukas</wiki>
+</topic>
+<topic>
+	<number>36</number>
+	<title>Kaiser Wilhelm Denkmal</title>
+	<latitude>52.24533</latitude>
+	<longitude>8.9054</longitude>
+	<wiki>http://de.wikipedia.org/wiki/Kaiser-Wilhelm-Denkmal_an_der_Porta_Westfalica</wiki>
+</topic>
+<topic>
+	<number>37</number>
+	<title>Leaning Tower of Pisa</title>
+	<latitude>43.723056</latitude>
+	<longitude>10.396417</longitude>
+	<wiki>http://en.wikipedia.org/wiki/Leaning_Tower_of_Pisa</wiki>
+</topic>
+<topic>
+	<number>38</number>
+	<title>Liberty Hall Georgia</title>
+	<latitude>33.557778</latitude>
+	<longitude>-82.895833</longitude>
+	<wiki>http://en.wikipedia.org/wiki/Liberty_Hall_%2528Crawfordville._Georgia%2529</wiki>
+</topic>
+<topic>
+	<number>39</number>
+	<title>Louvre piramid Paris</title>
+	<latitude>48.860854</latitude>
+	<longitude>2.335812</longitude>
+	<wiki>http://en.wikipedia.org/wiki/Louvre_Pyramid</wiki>
+</topic>
+<topic>
+	<number>40</number>
+	<title>Monastery of Batalha</title>
+	<latitude>39.659167</latitude>
+	<longitude>-8.826111</longitude>
+	<wiki>http://en.wikipedia.org/wiki/Monastery_of_Batalha</wiki>
+</topic>
+<topic>
+	<number>41</number>
+	<title>National Museum of Art of Romania</title>
+	<latitude>44.440161</latitude>
+	<longitude>26.095533</longitude>
+	<wiki>http://en.wikipedia.org/wiki/National_Museum_of_Art_of_Romania</wiki>
+</topic>
+<topic>
+	<number>42</number>
+	<title>Philopappos Monument</title>
+	<latitude>37.9672</latitude>
+	<longitude>23.7214</longitude>
+	<wiki>http://en.wikipedia.org/wiki/Philopappos_Monument</wiki>
+</topic>
+<topic>
+	<number>43</number>
+	<title>Quinta Vergara Vina del Mar Chile</title>
+	<latitude>-33.028056</latitude>
+	<longitude>-71.553611</longitude>
+	<wiki>http://en.wikipedia.org/wiki/Quinta_Vergara</wiki>
+</topic>
+<topic>
+	<number>44</number>
+	<title>Royal Palace of Caserta</title>
+	<latitude>41.074078</latitude>
+	<longitude>14.327502</longitude>
+	<wiki>http://en.wikipedia.org/wiki/Royal_Palace_of_Caserta</wiki>
+</topic>
+<topic>
+	<number>45</number>
+	<title>Tottenham High Cross</title>
+	<latitude>51.588889</latitude>
+	<longitude>-0.070278</longitude>
+	<wiki>http://en.wikipedia.org/wiki/Tottenham_High_Cross</wiki>
+</topic>
+<topic>
+	<number>46</number>
+	<title>Trento Cathedral</title>
+	<latitude>46.066933</latitude>
+	<longitude>11.121511</longitude>
+	<wiki>http://en.wikipedia.org/wiki/Trento_Cathedral</wiki>
+</topic>
+<topic>
+	<number>47</number>
+	<title>Tuskegee University</title>
+	<latitude>32.430278</latitude>
+	<longitude>-85.707778</longitude>
+	<wiki>http://en.wikipedia.org/wiki/Tuskegee_University</wiki>
+</topic>
+<topic>
+	<number>48</number>
+	<title>Villa della Regina Turin</title>
+	<latitude>45.05794</latitude>
+	<longitude>7.708583</longitude>
+	<wiki>http://en.wikipedia.org/wiki/Villa_della_Regina</wiki>
+</topic>
+<topic>
+	<number>49</number>
+	<title>Wupatki National Monument Arizona</title>
+	<latitude>35.565556</latitude>
+	<longitude>-111.386944</longitude>
+	<wiki>http://en.wikipedia.org/wiki/Wupatki_National_Monument</wiki>
+</topic>
+<topic>
+	<number>50</number>
+	<title>Wurzburg Residence Germany</title>
+	<latitude>49.79278</latitude>
+	<longitude>9.93889</longitude>
+	<wiki>http://en.wikipedia.org/wiki/W%25C3%25BCrzburg_Residence</wiki>
+</topic>
+</topics>

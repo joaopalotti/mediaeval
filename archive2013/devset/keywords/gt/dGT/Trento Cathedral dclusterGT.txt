@@ -1,0 +1,12 @@
+1,black and white artistic old view
+2,outside whole view
+3,inside general views
+4,outside partial view from square 
+5,outside gates
+6,outside close-ups details
+7,far view including surroundings
+8,night view
+9,partial outside view
+10,artistic views
+11,inside close-ups details
+12,old door handle

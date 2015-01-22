@@ -1,0 +1,10 @@
+1,black and white
+2,creative views
+3,ceiling paintings
+4,garden
+5,inside view
+6,sculptures
+7,front view
+8,inside yard
+9,partial view
+10,far view

@@ -1,0 +1,10 @@
+1,narrow land frontal view
+2,creative views
+3,inside view
+4,partial side views
+5,large frontal view
+6,night view
+7,distant large frontal view 
+8,over the riverboats basilica's view
+9,sepia color views
+10,distant views

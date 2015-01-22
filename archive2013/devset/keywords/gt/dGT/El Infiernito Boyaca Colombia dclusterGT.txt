@@ -1,0 +1,5 @@
+1,small group of columns
+2,close columns views
+3,distant columns views
+4,column close-ups
+5,row of columns

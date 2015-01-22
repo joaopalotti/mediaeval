@@ -1,0 +1,17 @@
+1,sculptures
+2,wall paintings
+3,columns
+4,interior stairs
+5,the cemetery 
+6,Pisa Baptistery
+7,creative views
+8,architectural details
+9,artefacts
+10,south entrance
+11,outside cupola
+12,inside views
+13,night views
+14,close-ups
+15,inside cupola
+16,surroundings
+17,Pisa tower

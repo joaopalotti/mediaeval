@@ -1,0 +1,18 @@
+1,inside archways
+2,wall paintings and models
+3,cupolla inside
+4,outside whole view
+5,water fountain statues
+6,waterfall
+7,distance view of the property
+8,outside whole view at night
+9,twilight outside partial view 
+10,outside monument
+11,outside statues
+12,front entrance
+13,artistic view
+14,inside architectural details and statues
+15,inside statues
+16,outside partial side view
+17,outside gates and windows
+18,art objects

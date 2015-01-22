@@ -1,0 +1,11 @@
+1,creative views
+2,through glass view
+3,statues
+4,night view
+5,large frontal view
+6,narrow frontal view
+7,inside view
+8,under archway view
+9,architectural details
+10,distant view
+11,dusk view

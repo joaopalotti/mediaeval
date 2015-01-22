@@ -1,0 +1,14 @@
+1,creative views
+2,night views
+3,interior cupola
+4,sculptures
+5,inside view
+6,facade of the basilica
+7,surroundings
+8,basilica's square
+9,entrance gate
+10,columns in basilica's square
+11,outside architectural details 
+12,outside cupola 
+13,close-ups
+14,large side view

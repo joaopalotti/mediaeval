@@ -1,0 +1,14 @@
+1,postcards
+2,engraved plates 
+3,creative views
+4,narrow frontal view
+5,distant view
+6,night view
+7,monument statues
+8,wall engravings
+9,partial tower side view
+10,distant tower view
+11,close statue views
+12,monument in the forest
+13,large frontal view
+14,black and white details

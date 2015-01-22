@@ -1,0 +1,13 @@
+1,night view
+2,large frontal view
+3,creative views
+4,near frontal view
+5,cathedral and leaning tower
+6,baptistry and leaning tower
+7,Pisa baptistry large frontal view 
+8,Pisa cathedral side view
+9,inside views
+10,bell tower
+11,architectural details
+12,tower base
+13,large frontal view

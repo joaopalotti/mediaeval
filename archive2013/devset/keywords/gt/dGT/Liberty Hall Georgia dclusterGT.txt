@@ -1,0 +1,6 @@
+1,graved stone
+2,large frontal view
+3,small neighbour houses
+4,statues
+5,side view
+6,distant view

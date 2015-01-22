@@ -1,0 +1,9 @@
+1,outside statue
+2,large frontal view
+3,distant frontal view
+4,close up frontal view
+5,night view
+6,outside stairs
+7,details
+8,sculptures
+9,surroundings

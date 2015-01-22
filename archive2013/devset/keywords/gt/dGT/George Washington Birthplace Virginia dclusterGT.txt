@@ -1,0 +1,12 @@
+1,engraved stone
+2,information signs
+3,surrounding lake
+4,inside details
+5,creative views
+6,surrounding forest
+7,alley
+8,house annex
+9,fence
+10,decorative pillars
+11,close-ups
+12,main entrance

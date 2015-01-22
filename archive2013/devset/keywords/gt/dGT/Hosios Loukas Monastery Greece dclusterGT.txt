@@ -1,0 +1,15 @@
+1,paintings
+2,cross near the window
+3,main entrance
+4,inside views
+5,walls ruins
+6,exterior archway
+7,wide frontal view
+8,over the hill view
+9,partial side view
+10,partial top view
+11,surroundings
+12,inside cupola
+13,close-ups
+14,walls close-up
+15,courtyard

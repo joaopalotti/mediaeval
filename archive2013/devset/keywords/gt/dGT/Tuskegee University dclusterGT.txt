@@ -1,0 +1,3 @@
+1,whole outside view
+2,logo
+3,new building

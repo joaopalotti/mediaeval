@@ -1,0 +1,8 @@
+1,artistic floating cables of Quinta Vergara Amphitheater
+2,amphitheater scene view
+3,Palacio Vergara outside view
+4,Quinta Vergara Amphitheater outside whole view
+5,garden outside monuments
+6,back and white
+7,Palacio Vergara inside view
+8,Palacio Vergara inside objects
