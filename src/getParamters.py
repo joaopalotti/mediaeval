@@ -15,7 +15,7 @@ def getParamters():
     parser.add_argument('--supervised_filter', '-s', action='store_const', help='Whether to use supervised filter or not', const=True, default=False)
     parser.add_argument('--supervised_dataset', '-d', metavar='DT',  action='append', help='A list of datasets to use for training a ML model for filtering (use it multiple times if you want multiple datasets)', default=[])
 
-    parser.add_argument('--metric', '-b', metavar='METRIC', action='append', help='Similarity metric', default=["cosine"])
+    parser.add_argument('--metric', '-b', metavar='METRIC', action='append', help='Similarity metric', default=[])
     #parser.add_argument('--visual', '-v', metavar='FEAT', type=str, action='append', help='Visual feature to use', default=[], required=True)
     parser.add_argument('--visual', '-v', metavar='FEAT', type=str, action='append', help='Visual feature to use', default=[])
     parser.add_argument('--others', '-k', metavar='FEAT', type=str, action='append', help='Other features such as latitude, nbcomments', default=[])

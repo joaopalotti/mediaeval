@@ -98,7 +98,7 @@ MAX_ELEMENTS = 50
 #Some variables not set as parameters:
 SIM_KEEP_ABOVE=.0 #.95
 MAX_USERS_PER_POI=20
-DEBUG=False
+DEBUG=True
 ONLY_RELEVANT = False
 GRAPH_RULE = "default"
 
@@ -369,7 +369,7 @@ def create_dataset(dtmap, visual_descriptors, other_descriptors, working_dataset
 #####-----------------CLUSTERING METHODS BEGINS--------------------------######
 ###############################################################################
 
-def get_number_of_clusterss(dataset, num_clusters):
+def get_number_of_clusters(dataset, num_clusters):
     if dataset.shape[0] < num_clusters:
         return dataset.shape[0] 
     return num_clusters
@@ -547,7 +547,7 @@ def create_similarity_matrix(dataset, header, sim_metric):
     return similarity
 ################################################################################
 
-def metis_clusters(G, num_clusters, additionalClusters=2):
+def metis_clusters(G, num_clusters, additionalClusters=0):
     G.graph['edge_weight_attr'] = 'weight'
     #G = metis.networkx_to_metis(G)
     if len(G.nodes()) == 0:
@@ -770,9 +770,10 @@ for ipoi, poi in enumerate([poi for poi, _ in sorted(topic_map.iteritems(), key=
     if DEBUG:
         if WORKING_DATASET == "dev2014" and poi != "angkor_wat": 
             continue
-        #if WORKING_DATASET == "test2013" and poi != "Angel Falls Venezuela": 
         if WORKING_DATASET == "test2013" and poi != "Wainwright Building Missouri": 
             continue
+        #if WORKING_DATASET == "dev2013" and poi != "Trento Cathedral": 
+        ##    continue
     dataset_now = dataset[dataset.poiName == poi]
       
     if "buid" in OTHER_DESCRIPTORS:
@@ -846,7 +847,7 @@ for ipoi, poi in enumerate([poi for poi, _ in sorted(topic_map.iteritems(), key=
     #Add some randomness
     ids = map(int, dataset_now["id"].values)
     id_rank = get_id_rank(dataset_now)
-    num_clusters = get_number_of_clusterss(dataset_now, DT_MAP['NUM_CLUSTERS'])
+    num_clusters = get_number_of_clusters(dataset_now, DT_MAP['NUM_CLUSTERS'])
 
     if METHOD == "flickr":
         ranked = flickr(dataset_now)
@@ -886,7 +887,7 @@ for ipoi, poi in enumerate([poi for poi, _ in sorted(topic_map.iteritems(), key=
         similarity = get_text_similarity(textSimDT_now, ids)
 
         # Both are very good strategies, but metis impacts less in the precision score
-        #parts = agglomerative(get_number_of_clusterss(dataset_now, DT_MAP["NUM_CLUSTERS"]), similarity, dataset_now, header, True)
+        #parts = agglomerative(get_number_of_clusters(dataset_now, DT_MAP["NUM_CLUSTERS"]), similarity, dataset_now, header, True)
         G = createGraph(similarity, SIM_KEEP_ABOVE, GRAPH_RULE)
         parts = metis_clusters(G, DT_MAP['NUM_CLUSTERS'])
 
@@ -913,10 +914,10 @@ for ipoi, poi in enumerate([poi for poi, _ in sorted(topic_map.iteritems(), key=
             nparts = AffinityPropagation(convergence_iter=20, damping=0.50, max_iter=500, verbose=True).fit_predict(sim_h)
         
         elif AUXILIAR_METHOD == "agglomerative":
-            nparts = agglomerative(get_number_of_clusterss(dataset_now, DT_MAP["NUM_CLUSTERS"]), sim_h, dataset_now, header) 
+            nparts = agglomerative(get_number_of_clusters(dataset_now, DT_MAP["NUM_CLUSTERS"]), sim_h, dataset_now, header) 
         
         elif AUXILIAR_METHOD == "spectral":
-            nparts = spectral(get_number_of_clusterss(dataset_now, DT_MAP["NUM_CLUSTERS"]), sim_h)  
+            nparts = spectral(get_number_of_clusters(dataset_now, DT_MAP["NUM_CLUSTERS"]), sim_h)  
         
         elif AUXILIAR_METHOD == "all":
             nparts = []
@@ -924,14 +925,18 @@ for ipoi, poi in enumerate([poi for poi, _ in sorted(topic_map.iteritems(), key=
             for metric in SIM_METRIC:
                 for desc in VISUAL_DESCRIPTORS:
                     h = [h for h in header if re.match(desc + "\d+$", h) ]
+                    
+                    #Agglomerative
                     sim_h = (create_similarity_matrix(dataset_now, h, metric))
-                    nclusters = get_number_of_clusterss(dataset_now, DT_MAP["NUM_CLUSTERS"])
+                    nclusters = get_number_of_clusters(dataset_now, DT_MAP["NUM_CLUSTERS"])
                     nparts.append( agglomerative(nclusters, sim_h, dataset_now, header) )
                     try:
+                        #Spectral
                         nparts.append( spectral(nclusters, sim_h) )
                     except ValueError:
                         print "Ignoring spectral"
 
+                    # Metis
                     G = createGraph(sim_h, SIM_KEEP_ABOVE, GRAPH_RULE)
                     nparts.append( metis_clusters(G, DT_MAP['NUM_CLUSTERS']) )
                     #nparts.append( AffinityPropagation(convergence_iter=20, damping=0.50, max_iter=500, verbose=True).fit_predict(sim_h) )
@@ -940,8 +945,8 @@ for ipoi, poi in enumerate([poi for poi, _ in sorted(topic_map.iteritems(), key=
                 print "USING TEXT SIM"
                 textSimDT_now = textSimDT[textSimDT["tid"] == topic_map[poi]]
                 sim_h = get_text_similarity(textSimDT_now, ids)
-                nparts.append( agglomerative(get_number_of_clusterss(dataset_now, DT_MAP["NUM_CLUSTERS"]), sim_h, dataset_now, header, True) )
-                #nparts.append( spectral(get_number_of_clusterss(dataset_now, DT_MAP["NUM_CLUSTERS"]),  sim_h) )
+                nparts.append( agglomerative(get_number_of_clusters(dataset_now, DT_MAP["NUM_CLUSTERS"]), sim_h, dataset_now, header, True) )
+                #nparts.append( spectral(get_number_of_clusters(dataset_now, DT_MAP["NUM_CLUSTERS"]),  sim_h) )
                 G = createGraph(sim_h, SIM_KEEP_ABOVE, GRAPH_RULE)
                 nparts.append( metis_clusters(G, DT_MAP['NUM_CLUSTERS']) )
 
@@ -965,16 +970,43 @@ for ipoi, poi in enumerate([poi for poi, _ in sorted(topic_map.iteritems(), key=
             MULTIGRAPH_SUM = 0
             # this ids should be already ranked by the "rank" colunm
             ranked = []
-            
+            debug_struct = []
+
             if args.useGT and WORKING_DATASET != "test2014":
                 idgrp = get_id_group(dataset_now)
                 groups = set()
                 print "Grp Id0:%d" % (idgrp[ids[0]])
-            
+           
+            def checkVector(forbmap, alreadIncluded, image):
+                out = []
+                for takenId in alreadyIncluded:
+                    if image in forbmap[takenId]:
+                        out.append(forbmap[takenId][image])
+                    else:
+                        out.append(0)
+                return out
+
+            def findClosest(forbmap, alreadIncluded, image):
+                closest, score = -1, -1
+                
+                for takenId in alreadyIncluded:
+                    if image in forbmap[takenId]:
+                        s = forbmap[takenId][image]
+                        if s > score:
+                            closest = takenId
+                            score = s
+                return closest, score
+
+            def checkGroups(listOfImages, groupIds):
+                groups = []
+                for i in listOfImages:
+                    groups.append( groupIds[i] )
+                return Counter(groups)
+
             alreadyIncluded = set()
             while len(ranked) < len(ids):
                 #Early break, we just need the first 50 results
-                if len(ranked) > 50:
+                if len(ranked) > 5:
                     break
 
                 for nid, id in enumerate(ids):
@@ -991,6 +1023,7 @@ for ipoi, poi in enumerate([poi for poi, _ in sorted(topic_map.iteritems(), key=
                         else:
                             foundvect.append(0)
 
+                    vmean, vmax, vmin = -1,-1,-1
                     if len(foundvect) > 0:
                         vmean, vmax = np.mean(foundvect), np.max(foundvect)
                         nozeros = [v for v in foundvect if v > 0]
@@ -1026,6 +1059,7 @@ for ipoi, poi in enumerate([poi for poi, _ in sorted(topic_map.iteritems(), key=
                         alreadyIncluded.add(id)
                         if args.useGT and WORKING_DATASET != "test2014":
                             groups.add(idgrp[id])
+                            debug_struct.append( ( id, idgrp[id], nid, vmin, vmean, vmax, MULTIGRAPH_MIN, MULTIGRAPH_MEAN, MULTIGRAPH_MAX ) )
                 
                 MULTIGRAPH_MEAN += MULTIGRAPH_MEAN_INCREMENT
                 MULTIGRAPH_MAX += MULTIGRAPH_MAX_INCREMENT
@@ -1054,7 +1088,7 @@ for ipoi, poi in enumerate([poi for poi, _ in sorted(topic_map.iteritems(), key=
         similarity = 1.0 - distance
         #beta = -1.0
         #similarity = np.exp(beta * distance / distance.std())
-        parts = agglomerative(get_number_of_clusterss(dataset_now, DT_MAP['NUM_CLUSTERS']), similarity, dataset_now, header) 
+        parts = agglomerative(get_number_of_clusters(dataset_now, DT_MAP['NUM_CLUSTERS']), similarity, dataset_now, header) 
         ranked = sort_bt_rank(id_rank, parts, ids)
 
     elif METHOD == "spectral":
@@ -1067,10 +1101,10 @@ for ipoi, poi in enumerate([poi for poi, _ in sorted(topic_map.iteritems(), key=
         #beta = -1
         #similarity = np.exp(beta * distance / distance.std())
         
-        parts = spectral(get_number_of_clusterss(dataset_now, DT_MAP['NUM_CLUSTERS']), similarity)  
+        parts = spectral(get_number_of_clusters(dataset_now, DT_MAP['NUM_CLUSTERS']), similarity)  
         ranked = sort_bt_rank(id_rank, parts, ids)
 
-    if args.useGT and WORKING_DATASET != "test2014" and METHOD not in ["joao","flickr","filterOnly","multigraph"]:
+    if args.useGT and WORKING_DATASET != "test2014" and METHOD not in ["joao","filterOnly","multigraph", "flickr"]:
         true_values = dataset_now["grp"].astype(int).values
         ami = metrics.adjusted_mutual_info_score(true_values, parts)
         ars = metrics.adjusted_rand_score(true_values, parts)
@@ -1082,18 +1116,18 @@ for ipoi, poi in enumerate([poi for poi, _ in sorted(topic_map.iteritems(), key=
         homo.append(np.mean(homogeneity))
         comp.append(np.mean(completess))
         vmetric.append(np.mean(v))
-        print ami, ars, np.mean(homo), np.mean(comp), np.mean(v)
+        print "Values", ami, ars, np.mean(homo), np.mean(comp), np.mean(v)
        
     if args.useGT and WORKING_DATASET != "test2014":
         id_group = get_id_group(dataset_now)
         #show_original_rank_group(ranked, id_rank, id_group, header, dataset_now)
 
-    print "Using at least", len(ranked), "examples" 
-    if len(ranked) < 50:
-        print "CHECK IT!!!!!!!!!!!! THERE ARE LESS THAN 50 EXAMPLES"
+    #print "Using at least", len(ranked), "examples" 
+    #if len(ranked) < 50:
+    #    print "CHECK IT!!!!!!!!!!!! THERE ARE LESS THAN 50 EXAMPLES"
     write_output(OUTFILE, "a", ranked, topic_map, poi, MAX_ELEMENTS)
 
-if args.useGT and WORKING_DATASET != "test2014" and METHOD not in ["joao", "multigraph"]:
+if args.useGT and WORKING_DATASET != "test2014" and METHOD not in ["joao", "multigraph", "filterOnly", "flickr"]:
     print "Mean adjusted rand score:" , np.mean(arss)
     print "Mean adjusted mutual info score:" , np.mean(amis)
     print "Mean homogeneity:" , np.mean(homo)
